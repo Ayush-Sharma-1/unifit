@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head lang="en">
+        <meta charset="UTF-8"/>
+        <title>
+            UniFit
+        </title>
+    </head>
+
+    <body> 
+        <h1>Welcome to UniFit</h1>
+        <div>
+            this is the welcome page
+            <ul>
+                <li><a href="{% url 'uni_fit:register' %}">Sign Up</a></li>
+                <li><a href="{% url 'uni_fit:login' %}">Login</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

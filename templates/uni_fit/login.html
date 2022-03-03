@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head lang="en">
+        <meta charset="UTF-8"/>
+        <title>
+            UniFit - Login
+        </title>
+    </head>
+
+    <body> 
+        <h1>Login to UniFit</h1>
+        <form id="login_form" method="post" action="{% url 'uni_fit:login' %}">
+            {% csrf_token %}
+            Username: <input type="username" name="username" value="" size="50"/>
+            <br />
+            Password: <input type="password" name="password" value="" size="50"/>
+            <br />    
+            <input type="submit" value="submit" />
+        </form>
+    </body>
+</html>
