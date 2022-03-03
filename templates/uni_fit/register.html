@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head lang="en">
+        <meta charset="UTF-8"/>
+        <title>
+            UniFit - Register
+        </title>
+    </head>
+
+    <body> 
+        <h1>Register for UniFit</h1>
+        {% if registered %}
+        UniFit says: <strong>thank you for registering!</strong>
+        <a href="{% url 'uni_fit:index' %}">Return to the homepage.</a><br />
+        {% else %}
+        UniFit says: <strong>register here!</strong><br />
+        <form id="user_form" method="post" action="{% url 'uni_fit:register' %}"
+              enctype="multipart/form-data">
+       
+              {% csrf_token %}
+              First Name: <input type="text" name="firstname" value="" size="50"/>
+              Last Name: <input type="text" name="lastname" value="" size="50"/>
+              <!-- Display each form -->
+              {{ user_form.as_p }}
+              {{ profile_form.as_p }}
+       
+              <!-- Provide a button to click submit the form. -->
+              <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+    </body>
+</html>
+
+
+
+
