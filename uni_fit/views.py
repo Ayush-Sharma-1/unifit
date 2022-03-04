@@ -10,6 +10,9 @@ from stat import FILE_ATTRIBUTE_SPARSE_FILE
 def index(request):
     return render(request, 'uni_fit/index.html',)
 
+def home(request):
+    return render(request, 'uni_fit/home.html',)
+
 def register(request):
     registered = False
 
@@ -54,7 +57,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return redirect(reverse('uni_fit:index'))
+                return redirect(reverse('uni_fit:home'))
             else:
                 return HttpResponse("Your UniFit account is disabled.")
         else:
@@ -62,3 +65,8 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied.")
     else:
         return render(request, 'uni_fit/login.html')
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect(reverse('uni_fit:index'))
