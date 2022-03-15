@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'uni_fit',
+    'registration'
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
 
 LOGIN_URL = 'uni_fit:login'
+
+# Registration package's configuration
+REGISTRATION_OPEN = True
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = 'uni_fit:home'
+LOGIN_URL = 'auth_login'
