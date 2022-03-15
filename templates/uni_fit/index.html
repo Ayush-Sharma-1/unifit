@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-    <head lang="en">
-        <meta charset="UTF-8"/>
-        <title>
-            UniFit
-        </title>
-    </head>
+{% extends 'uni_fit/base.html' %}
 
-    <body> 
-        <h1>Welcome to UniFit</h1>
-        <div>
-            this is the welcome page that the user sees when they are <strong>logged out</strong>
-            <ul>
-                <li><a href="{% url 'uni_fit:register' %}">Sign Up</a></li>
-                <li><a href="{% url 'uni_fit:login' %}">Login</a></li>
-            </ul>
-        </div>
-    </body>
-</html>
+{% block title_block %}
+    UniFit
+{% endblock %}
+
+{% block body_block %}
+<h1>Welcome to UniFit</h1>
+
+<p>
+    this is the welcome page that the user sees when they are <strong>logged out</strong>
+</p>
+{% endblock %}
