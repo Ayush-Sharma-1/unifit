@@ -7,8 +7,11 @@
 
    
 {% block body_block %}
+<!--CSS-->
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
 <body>
+    <!--CAROUSEL FROM BOOTSTRAP-->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -23,8 +26,8 @@
             <h5>Welcome to UniFit</h5>
             <p>this is the welcome page that the user sees when they are <strong>logged out</strong>
             <div class="slider-btn">
-                <a href="{% url 'registration_register' %}"><button class="btn btn-1">Sign Up</button></a>
-                <a href="{% url 'auth_login' %}"><button class="btn btn-1">Login</button></a>
+                <a href="{% url 'registration_register' %}"><button class="btn">Sign Up</button></a>
+                <a href="{% url 'auth_login' %}"><button class="btn">Login</button></a>
             </div>
             </div>
         </div>
@@ -33,11 +36,11 @@
             <img src="/static/images/background6.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
             <h5>University Guide</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            <p>this is the welcome page that the user sees when they are <strong>logged out</strong>
 
             <div class="slider-btn">
-                <a href="{% url 'registration_register' %}"><button class="btn btn-1">Sign Up</button></a>
-                <a href="{% url 'auth_login' %}"><button class="btn btn-2">Login</button></a>
+                <a href="{% url 'registration_register' %}"><button class="btn">Sign Up</button></a>
+                <a href="{% url 'auth_login' %}"><button class="btn">Login</button></a>
             </div>
             </div>
         </div>
@@ -46,11 +49,11 @@
             <img src="/static/images/background9.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
             <h5>Find your best fit</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <p>this is the welcome page that the user sees when they are <strong>logged out</strong>
 
             <div class="slider-btn">
-                <a href="{% url 'registration_register' %}"><button class="btn btn-1">Sign Up</button></a>
-                <a href="{% url 'auth_login' %}"><button class="btn btn-1">Login</button></a>
+                <a href="{% url 'registration_register' %}"><button class="btn">Sign Up</button></a>
+                <a href="{% url 'auth_login' %}"><button class="btn">Login</button></a>
             </div>
             </div>
         </div>

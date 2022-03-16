@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
 body {
     background-color: #FFFFFF;
     min-height: 100%;
@@ -43,8 +43,5 @@ nav img{
     width: auto;
 }
 
-.show-logo{
-    float: left;
-}
 
 

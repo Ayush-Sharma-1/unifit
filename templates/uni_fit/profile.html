@@ -6,6 +6,7 @@
 
 {% block body_block %}
 <h1>User Profile: {{user.username}}</h1>
+
 <li class="nav-item">
     <a class="nav-link" href="{% url 'auth_password_change' %}">Change Password</a>
 </li>
