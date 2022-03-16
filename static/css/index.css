@@ -1,0 +1,60 @@
+
+/* ----- SLIDER -----*/
+.carousel-item{
+    height: 90vh;
+    min-height: 300px;
+    background: no-repeat scroll center scroll;
+   /* -webkit-background-size: cover;*/
+    background-size: cover;
+}
+
+.carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000000;
+    opacity: 0.5;
+}
+
+.carousel-caption{
+    bottom: 180px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.carousel-caption h5{
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.carousel-caption p{
+    font-size: 18px;
+    top:2rem;
+}
+
+.slider-btn{
+    margin-top: 30px;
+}
+
+.slider-btn .btn{
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 10px;
+    border: 2px solid #38B6FF;
+    padding: 19px 29px;
+    cursor: pointer;
+    background: #38B6FF;
+    color: #ffffff;
+    margin: 10px;
+}
+
+.slider-btn .btn:hover{
+    border: 2px solid #FFFFFF;
+    background: #FFFFFF;
+    color: #38B6FF;
+}
+

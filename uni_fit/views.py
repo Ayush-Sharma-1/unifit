@@ -13,3 +13,5 @@ def index(request):
 def home(request):
     return render(request, 'uni_fit/home.html',)
 
+def profile(request):
+    return render(request, 'uni_fit/profile.html',)

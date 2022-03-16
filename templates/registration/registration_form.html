@@ -1,17 +1,57 @@
 {% extends 'uni_fit/base.html' %}
+{% load staticfiles %}
 
 {% block title_block %}
    Register
 {% endblock %}
 
 {% block body_block %}
-<h1>Register Here</h1>
 
-<form method="post" action=".">
-    {% csrf_token %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
 
-    {{ form.as_p }}
+<div class="wrapper">
+    <div class="box">
 
-    <input type="submit" value="Register"/>
-</form>
+        <h1>Register Here</h1>
+
+        <form method="post" action=".">
+            {% csrf_token %}
+
+            <div class="inputBox">
+                {{ form.username }}
+                <label>USERNAME</label>
+            </div>
+
+            <div class="inputBox">
+                {{ form.email }}
+                <label>EMAIL</label>
+            </div>
+
+            <div class="inputBox">
+                {{ form.password1 }}
+                <label>PASSWORD</label>
+            </div>
+            
+            <div class="inputBox">
+                {{ form.password2 }}
+                <label>PASSWORD CONFIRMATION</label>
+            </div>
+            <br>
+
+            <button type="submit" id="submit">Sign Up</button>
+        </form>
+
+        <p>Already have an account? <a href="{% url 'auth_login' %}"> Sign in.</a></p>
+        
+        <div>
+            {% for error in form.non_field_errors %}
+              <div class="alert alert-danger">
+                  <strong>{{ error|escape }}</strong>
+              </div>
+            {% endfor %}
+          </div>
+        
+    </div>
+</div>
+    
 {% endblock %}

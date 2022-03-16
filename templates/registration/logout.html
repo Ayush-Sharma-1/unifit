@@ -1,13 +1,21 @@
 {% extends 'uni_fit/base.html' %}
+{% load staticfiles %}
+
 
 {% block title_block %}
     Logged Out
 {% endblock %}
 
 {% block body_block %}
-<h1>Logged Out</h1>
 
-<p>
-    You have been successfully logged out. Thanks for spending time on UniFit!
-</p>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="logout">
+    <div class="box">
+        <h1>Logged Out</h1>
+            <p>
+                You have been successfully logged out.<br> Thanks for spending time on UniFit!
+            </p>
+    </div>
+</div>
 {% endblock %}
