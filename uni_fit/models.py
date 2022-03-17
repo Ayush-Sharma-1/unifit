@@ -1,9 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-<<<<<<< HEAD
-=======
 from django.forms import CharField
->>>>>>> f396599 (Models Joe)
+
 
 class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
@@ -14,9 +12,6 @@ class UserProfile(models.Model):
     picture = models.ImageField(upload_to='profile_images', blank=True)
 
     def __str__(self):
-<<<<<<< HEAD
-        return self.user.username
-=======
         return self.user.username
 
 class InternalData(models.Model):
@@ -89,4 +84,3 @@ class Review(models.Model):
 
     def __str__(self):
         return self.text 
->>>>>>> f396599 (Models Joe)
