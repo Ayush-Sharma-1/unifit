@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'uni_fit',
-    'registration'
+    'registration',
+    'uni_fit.apps.UniFitConfig',
+    'unifit',
 ]
 
 MIDDLEWARE = [
