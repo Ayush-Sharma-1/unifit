@@ -5,9 +5,61 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>Welcome to UniFit</h1>
+<!--CSS & JS-->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+{% load static %}
+<script src="{% static "unifit\static\js\home.js" %}"></script>
+<script>
+    getUniversities(0);
+</script>
 
+<div id="category-banner" class="text-center">
+    <div class="select-wrapper">
+        <h1 style="color:white;">Welcome to UniFit</h1>
+        <select id="category-dropdown" onchange="getCountry(this.value);">
+            <option selected value="0">Country</option>
+            {% for c in university.country %}
+            <option value="{{ c.id }}">{{ c.CountryName }}</option>
+            {% endfor %}
+        </select>
+        <span><i class="fas fa-chevron-circle-down"></i></span>
+    </div>
+</div>
+
+<div class="text-center">
+    <div class="select-wrapper">
+        <select id="category-dropdown" onchange="getUniversities(this.value);">
+            <option selected value="0">Department</option>
+            {% for c in university %}
+            <option value="{{ c.id }}">{{ c.CountryName }}</option>
+            {% endfor %}
+        </select>
+        <span><i class="fas fa-chevron-circle-down"></i></span>
+    </div>
+</div>
 <p>
     this is the home page that the user sees when they are <strong>logged in</strong> 
 </p>
+<div>
+ {% if universities %}
+    <table>
+        <tr>
+            <th>Department Rank</th>
+            <th>University</th>
+        </tr>
+        {% for university in universities %} {% csrf_token %}
+            <tr>
+                <td>{{university.UniRank}}</td>
+                <td>{{university.UniName }}</td>
+                <td><a href="{% url 'favorite_university' university.UniId %}"  class="btn btn-default btn-sm btn-favorite" role="button"></a></td>
+            </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <strong>There are no universities present.</strong>
+{% endif %}
+ </div>
+    
+
 {% endblock %}

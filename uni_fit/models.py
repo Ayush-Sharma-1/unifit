@@ -22,6 +22,21 @@ class InternalData(models.Model):
     def __str__(self):
         return self.name
 
+class University(models.Model):
+    internalData = models.ForeignKey(InternalData, on_delete=models.CASCADE)
+    UniId = models.AutoField(primary_key=True, default=0)
+    UniName = models.CharField(max_length=100, unique=True, default='TestName')
+    Country = models.CharField(max_length=100)
+    UniRank = models.IntegerField(default=0)
+    About = models.CharField(max_length=500)
+    Link = models.CharField(max_length=30)
+
+    class Meta:
+        verbose_name_plural = "Universities"
+
+    def __str__(self):
+        return self.text
+
 class Users(models.Model):
     internalData = models.ForeignKey(InternalData, on_delete=models.CASCADE)
     UserId = models.IntegerField
@@ -33,7 +48,7 @@ class Users(models.Model):
     DepartmentPreference = models.CharField(max_length=100)
     SubjectPreference = models.CharField(max_length=100)
     Grade = models.IntegerField
-    FavouriteUnversity = models.CharField(max_length=50)
+    FavouriteUnversity = models.ManyToManyField(University,related_name='favourite',default=None, blank=True)
 
     class Meta:
         verbose_name_plural = "Users"
@@ -41,25 +56,12 @@ class Users(models.Model):
     def __str__(self):
         return self.text
 
-class University(models.Model):
-    internalData = models.ForeignKey(InternalData, on_delete=models.CASCADE)
-    UniName = models.IntegerField
-    Country = models.CharField(max_length=100)
-    Rank = models.IntegerField
-    About = models.CharField(max_length=500)
-    Link = models.CharField(max_length=30)
-
-    class Meta:
-        verbose_name_plural = "Universities"
-
-    def __str__(self):
-        return self.text
-
 class University_Department(models.Model):
     internalData = models.ForeignKey(InternalData, on_delete=models.CASCADE)
-    UniId = models.IntegerField
+    DeptId = models.AutoField(primary_key=True, default=0)
+    UniId = models.ForeignKey(University, on_delete=models.CASCADE, default=0)
     DeptName = models.CharField(max_length=100)
-    Rank = models.IntegerField
+    DeptRank = models.IntegerField
     About = models.CharField(max_length=30)
     Link = models.CharField(max_length=500)
 
