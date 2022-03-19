@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+*{
+    font-family:'Poppins';
+}
+
+h1{
+    padding: 20px;
+    text-align: center;
+    font-weight: 700;
+    color: #031A5B;
+}
+
+h3{
+    background-color: #031A5B;
+    margin-left: 80px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-bottom: 18px;
+    color: #FFFFFF;
+    width: 30%;
+    font-weight: 700;
+    text-align: center;
+}
+
+i{
+    padding-right: 10px;
+}
+
+.post{
+    border: 2px solid  #031A5B;
+    width: 30%;
+    margin-left: 80px;
+    padding: 5px;
+    margin-top: -18px;
+}
+
+.post a{
+    text-decoration: none;
+    color:#38B6FF;
+}
+
+.post a:hover{
+    color:#031A5B;
+}
+
+.reddit{
+    background-color: aqua;
+    overflow:auto ;
+    text-align: justify;
+    margin: 30px;
+}
+
+.reddit a{
+    text-decoration: none;
+}
+
