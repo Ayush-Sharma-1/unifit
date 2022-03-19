@@ -17,7 +17,6 @@ h3{
     margin-left: 80px;
     padding-bottom: 15px;
     padding-top: 15px;
-    margin-bottom: 18px;
     color: #FFFFFF;
     width: 30%;
     font-weight: 700;
@@ -33,7 +32,7 @@ i{
     width: 30%;
     margin-left: 80px;
     padding: 5px;
-    margin-top: -18px;
+    margin-top: -12px;
 }
 
 .post a{
