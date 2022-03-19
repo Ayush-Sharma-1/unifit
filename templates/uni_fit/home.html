@@ -52,12 +52,13 @@
             <tr>
                 <td>{{university.UniRank}}</td>
                 <td>{{university.UniName }}</td>
-                <td><a href="{% url 'favorite_university' university.UniId %}"  class="btn btn-default btn-sm btn-favorite" role="button"></a></td>
+                <td><a href="{% url 'uni_fit:favorite_add' university.UniId %}" >Add to Fav</a></td>
             </tr>
     {% endfor %}
     </table>
 {% else %}
     <strong>There are no universities present.</strong>
+    <a href="#"  class="btn btn-default btn-sm btn-favorite" role="button"></a>
 {% endif %}
  </div>
     
