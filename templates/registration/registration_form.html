@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-   Register
+Register
 {% endblock %}
 
 {% block body_block %}
@@ -16,6 +16,16 @@
 
         <form method="post" action=".">
             {% csrf_token %}
+
+            <div class="name">
+                <label for="fname">FIRST NAME</label>
+                <input type="text" id="fname" name="fname">
+            </div>
+
+            <div class="name">
+                <label for="fname">LAST NAME</label>
+                <input type="text" id="lname" name="lname">
+            </div>
 
             <div class="inputBox">
                 {{ form.username }}
@@ -31,27 +41,49 @@
                 {{ form.password1 }}
                 <label>PASSWORD</label>
             </div>
-            
+
             <div class="inputBox">
                 {{ form.password2 }}
                 <label>PASSWORD CONFIRMATION</label>
             </div>
-            <br>
+         
+            <label id="pref">SET YOUR PREFERENCES</label>
+
+            <div class="preferences">
+                <select name="subject" id="subject">
+                    <option value="" selected="selected">Select Country</option>
+                </select>
+                <select name="topic" id="topic">
+                    <option value="" selected="selected">Select Department</option>
+                </select>
+            </div>
+
+            <label >SOME MORE ABOUT YOU</label>
+
+            <div class="about-you">
+                <select name="chapter" id="chapter">
+                    <option value="" selected="selected">Select Subject</option>
+                </select>
+                <label for="grade">GRADE (%)</label>
+                <input type="integer" id="grade" name="grade">
+            </div>
 
             <button type="submit" id="submit">Sign Up</button>
         </form>
 
         <p>Already have an account? <a href="{% url 'auth_login' %}"> Sign in.</a></p>
-        
+
         <div>
             {% for error in form.non_field_errors %}
-              <div class="alert alert-danger">
-                  <strong>{{ error|escape }}</strong>
-              </div>
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
             {% endfor %}
-          </div>
-        
+        </div>
     </div>
 </div>
-    
+
+<!--JS-->
+<script src="/static/js/dropdown.js"></script>
+
 {% endblock %}
