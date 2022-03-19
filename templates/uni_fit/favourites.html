@@ -1,0 +1,31 @@
+{% extends 'uni_fit/base.html' %}
+
+{% block title_block %}
+    Favourites
+{% endblock %}
+
+{% block body_block %}
+<h1>{{user.username}} your favourites are: </h1>
+<div>
+    {% if fav_list %}
+    <div>
+        {% for university in fav_list %}
+        <p>
+           <strong>{{university.UniName}}</strong>
+        </p>
+        <div>
+            <p>{{university.About}}</p>
+        </div>
+        <div>
+            <a href="{% url 'uni_fit:favourite_add' university.UniId%}" class="btn btn-outline-primary">Remove</a>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+
+
+
+
+{% endblock %}

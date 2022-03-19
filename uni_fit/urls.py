@@ -8,4 +8,7 @@ urlpatterns = [
     path('home/',views.home, name='home'),
     path('profile/',views.profile, name='profile'),
     path('university/',views.reddit, name='reddit'),
+    path('fav/<int:id>',views.favourite_add, name='favourite_add'),
+    path('favorites/',views.favourite_list, name='favourite_list'),
+
 ]
