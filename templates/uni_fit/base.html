@@ -35,11 +35,11 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'uni_fit:profile' %}">Hello, {{user.username}}!</a>
+                  <a class="nav-link" id="hello-user" href="{% url 'uni_fit:profile' %}">Hello, {{user.username}}!</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link active" href="{% url 'auth_logout' %}?next={% url 'uni_fit:index' %}">Logout</a>
+                  <a class="nav-link active" id="logout" href="{% url 'auth_logout' %}?next={% url 'uni_fit:index' %}">Logout</a>
                 </li>
 
                 <li>
