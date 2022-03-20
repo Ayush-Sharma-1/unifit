@@ -5,11 +5,149 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>User Profile: {{user.username}}</h1>
+<h3>User Profile: {{user.username}}</h1>
 
 <li class="nav-item">
     <a class="nav-link" href="{% url 'auth_password_change' %}">Change Password</a>
 </li>
+
+<div class="row">
+  <div class="col-12 col-xl-8">
+      <div class="card card-body bg-white border-light shadow-sm mb-4">
+          <h2 class="h5 mb-4">Profile information</h2>
+          <div class="row">
+              <div class="col-md-6 mb-3">
+                  <div>
+                      <label for="first_name">First Name</label>
+                      <input name="first_name" class="form-control" id="first_name" type="text"
+                             placeholder="Enter your first name" value= "{{ profile.first_name }}" readonly>
+                  </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                  <div>
+                      <label for="last_name">Last Name</label>
+                      <input name="last_name" class="form-control" id="last_name" type="text"
+                             placeholder="Also your last name" value="{{ profile.last_name }}"
+                             readonly>
+                  </div>
+              </div>
+          </div>          
+          <div class="row">
+              <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input name="email" class="form-control" id="email" type="email"
+                             placeholder="name@company.com" value={{ request.user.email }} readonly>
+                  </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                      <label for="grade">Grade</label>
+                      <input name="grade" class="form-control" id="grade" type="text"
+                             value="{{ profile.grade }}" readonly>
+                  </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select name="country" id="country">
+                      <option value="" selected="selected">Select Country</option>
+                    </select>                    
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                  <label for="department">Department</label>
+                  <select name="department" id="department">
+                    <option value="" selected="selected">Select Department</option>
+                  </select>
+              </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select name="subject" id="subject">
+                  <option value="" selected="selected">Select subject</option>
+                </select>
+            </div>
+        </div>
+          </div>          
+      </div>
+  </div>
+  <div class="col-12 col-xl-4">
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card border-light text-center p-0">
+                <div class="profile-cover rounded-top">
+                  <img src="/static/images/profile-cover.jpg" class="bg-cover rounded-top"></div>                
+                <div class="card-body pb-5">
+                    <img src="/static/images/default-profile-picture.png" id="output"
+                         class="user-avatar large-avatar rounded-circle mx-auto mt-n7 mb-4">
+                    <h4 class="h3">{{ profile.user.username }}</h4>
+                    <h4 class="font-weight-normal">{{ profile.user.get_full_name }}</h4>
+                    <h5 class="font-weight-normal">
+                        {{ request.user.email }}
+                    </h5>
+                    <p class="text-gray mb-4">{{ profile.address|default:'' }}</p>                    
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card card-body bg-white border-light shadow-sm mb-4">
+                <h2 class="h5 mb-4">Select profile photo</h2>
+                <div class="d-xl-flex align-items-center">
+                    <div class="file-field">
+                        <div class="d-flex">
+                            <div class="d-flex">                                
+                                <input name="avatar" type="file" onchange="loadFile(event)">
+                                <div class="d-md-block text-left">
+                                    <div class="font-weight-normal text-dark mb-1">Choose Image</div>
+                                    <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-xl-8">
+      <div class="card card-body bg-white border-light shadow-sm mb-4">
+          <h2 class="h5 mb-4">Recommendations</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div>
+                  <label for="University name 1">University name 1</label>
+                  <input name="University name 1" class="form-control" id="University name 1" type="text"
+                         readonly>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div>
+                  <label for="University name 2">University name 2</label>
+                  <input name="University name 2" class="form-control" id="University name 2" type="text"                         
+                         readonly>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>           
+</div>
+<!--CSS & JS-->
+
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);  
+};
+</script> 
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}" />
 
 {% endblock %}
 
