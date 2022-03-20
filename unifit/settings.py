@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'uni_fit',
     'registration',
     'unifit',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,6 @@ REGISTRATION_OPEN = True
 REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = 'uni_fit:home'
 LOGIN_URL = 'auth_login'
+
+# review form
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
