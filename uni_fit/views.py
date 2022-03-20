@@ -1,6 +1,7 @@
+from webbrowser import get
 from django.urls import reverse
-from django.shortcuts import get_object_or_404, render, redirect
-from django.http import HttpResponse
+from django.shortcuts import get_list_or_404, get_object_or_404, render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 from uni_fit.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -23,18 +24,17 @@ def profile(request):
 
 @login_required
 def favourite_add(request, id):
-    university = get_object_or_404(University, UniId=id)
-    if (university.FavouriteUnversity.filter(UserId=request.Users.UserId).exists()):
-        university.FavouriteUnversity.remove(request.Users)
+    university = get_object_or_404(University, FavouriteUnversity = id)
+    if (university.FavouriteUnversity.filter(FavouriteUnversity=request.user.id).exists()):
+        university.FavouriteUnversity.remove(request.user)
     else:
-        university.FavouriteUnversity.add(request.Users)
-    return(request, 'uni_fit/home.html')
+        university.FavouriteUnversity.add(request.user)
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 @login_required
 def favourite_list(request):
-    l = University.FavouriteUnversity.get(University.FavouriteUnversity)
-    fav_list = University.FavouriteUnversity.filter(l=request.Users)
-    return(request, 'uni_fit/favourites.html', {'fav_list': fav_list})
+    fav_list = University.objects.filter(FavouriteUnversity=request.user.id)
+    return render(request, 'uni_fit/favourites.html', {'fav_list': fav_list})
 
 def reddit(request):
     result_list = []

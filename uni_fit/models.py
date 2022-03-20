@@ -22,6 +22,7 @@ class InternalData(models.Model):
     def __str__(self):
         return self.name
 
+
 class Users(models.Model):
     internalData = models.ForeignKey(InternalData, on_delete=models.CASCADE)
     UserId = models.IntegerField
