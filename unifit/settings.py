@@ -135,9 +135,10 @@ LOGIN_URL = 'uni_fit:login'
 
 # Registration package's configuration
 REGISTRATION_OPEN = True
-REGISTRATION_AUTO_LOGIN = True
+REGISTRATION_AUTO_LOGIN = False
 LOGIN_REDIRECT_URL = 'uni_fit:home'
 LOGIN_URL = 'auth_login'
 
-# review form
+
+# review form 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

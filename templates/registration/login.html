@@ -19,15 +19,17 @@
 
             <div class="inputBox">
                 {{ form.username }}
+                <p>{{form.username.errors}}</p>
                 <label>USERNAME</label>
             </div>
             
             <div class="inputBox">
                 {{ form.password }}
+                <p>{{form.password.errors}}</p>
                 <label>PASSWORD</label>
             </div>
             <br>
-
+            {{ form.errors }}
             <button type="submit" id="submit">Sign In</button>
             <input type="hidden" name="next" value="{{ next }}" />
         </form>
