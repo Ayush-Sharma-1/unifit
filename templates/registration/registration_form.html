@@ -15,8 +15,8 @@ Register
         <h1>Register Here</h1>
 
         <form method="post" action=".">
-            {% csrf_token %}
-
+            {% csrf_token %}      
+            
             <div class="name">
                 <label for="fname">FIRST NAME</label>
                 <input type="text" id="fname" name="fname">
@@ -67,12 +67,13 @@ Register
                 <label for="grade">GRADE (%)</label>
                 <input type="integer" id="grade" name="grade">
             </div>
-
+            <br/>
+            {{ form.errors }}
             <button type="submit" id="submit">Sign Up</button>
         </form>
 
         <p>Already have an account? <a href="{% url 'auth_login' %}"> Sign in.</a></p>
-
+       
         <div>
             {% for error in form.non_field_errors %}
             <div class="alert alert-danger">

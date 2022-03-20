@@ -5,11 +5,7 @@
 {% endblock %}
 
 {% block body_block %}
-<h3>User Profile: {{user.username}}</h1>
-
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'auth_password_change' %}">Change Password</a>
-</li>
+<h3>{{user.username}}</h1>
 
 <div class="row">
   <div class="col-12 col-xl-8">
@@ -79,7 +75,7 @@
         <div class="col-12 mb-4">
             <div class="card border-light text-center p-0">
                 <div class="profile-cover rounded-top">
-                  <img src="/static/images/profile-cover.jpg" class="bg-cover rounded-top"></div>                
+                  <img src="/static/images/profile-cover2.png"  class="bg-cover rounded-top"></div>                
                 <div class="card-body pb-5">
                     <img src="/static/images/default-profile-picture.png" id="output"
                          class="user-avatar large-avatar rounded-circle mx-auto mt-n7 mb-4">
@@ -92,6 +88,9 @@
                 </div>
             </div>
         </div>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'auth_password_change' %}">Change Password</a>
+        </li>
         <div class="col-12">
             <div class="card card-body bg-white border-light shadow-sm mb-4">
                 <h2 class="h5 mb-4">Select profile photo</h2>

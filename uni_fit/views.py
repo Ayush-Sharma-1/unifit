@@ -13,6 +13,7 @@ from uni_fit.models import University, Users, Post
 def index(request):
     return render(request, 'uni_fit/index.html',)
 
+@login_required
 def home(request):
     context_dict = {}
     university_list = University.objects.all().order_by('UniRank')
