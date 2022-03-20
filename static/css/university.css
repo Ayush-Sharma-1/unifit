@@ -10,6 +10,7 @@ h1{
     text-align: center;
     font-weight: 700;
     color: #031A5B;
+    font-size: 50px;
 }
 
 h3{
@@ -45,13 +46,31 @@ i{
 }
 
 .reddit{
-    background-color: aqua;
     overflow:auto ;
     text-align: justify;
     margin: 30px;
+    height:300px;
 }
 
 .reddit a{
     text-decoration: none;
 }
 
+img{
+    width: 29%;
+    margin-left: 110px;
+}
+
+.section1 div{
+    display: inline;
+}
+
+.uni-info{
+    background-color: aqua;
+    margin-left: 110px;
+    width: 500px;
+}
+
+.review-section div{
+   display: inline;
+}

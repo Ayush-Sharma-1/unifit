@@ -14,25 +14,41 @@ University Name
 
 <h1>University of Glasgow</h1>
 <br></br>
-<div>
-    {% if result_list %}
-    <h3><i class="fab fa-reddit-square fa-2xl"></i>Popular Reddit Posts</h3>
+<div class="section1">
     <div>
-        {% for result in result_list %}
-        <p class="post">
-            <!--<strong>SUBREDDIT: </strong> {{ result.subreddit }}-->
-            <a href="{{ result.url }}" target=”_blank”><strong>{{ result.title }} </strong></a>
-            <!--<strong>TEXT: </strong> {{ result.selftext }}
+        <img src="/static/images/background2.jpg" alt="picture of university">
+    </div>
+
+    <div class="uni-info">
+        add some info here
+    </div>
+</div>
+
+<div class="section2">
+    <div class="reddit">
+        {% if result_list %}
+        <h3><i class="fab fa-reddit-square fa-2xl"></i>Popular Reddit Posts</h3>
+       
+            {% for result in result_list %}
+            <div>
+            <p class="post">
+                <!--<strong>SUBREDDIT: </strong> {{ result.subreddit }}-->
+                <a href="{{ result.url }}" target=”_blank”><strong>{{ result.title }} </strong></a>
+                <!--<strong>TEXT: </strong> {{ result.selftext }}
                 <strong>UPVOTE RATIO: </strong> {{ result.upvote_ratio }}
                 <strong>UP VOTES: </strong> {{ result.ups }}
                 <strong>DOWN VOTES: </strong> {{ result.downs }}
                 <strong>SCORE:</strong> {{ result.score }}
                 <strong>URL:</strong> {{ result.url }}-->
-        </p>
+            </p>
+            </div>
+        {% endfor %}
+        {% endif %}
     </div>
-    {% endfor %}
-    {% endif %}
-</div>
 
+    <div class="review-section">
+        <h3>Reviews</h3>
+    </div>
+</div>
 
 {% endblock %}
