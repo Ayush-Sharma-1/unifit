@@ -61,6 +61,7 @@
     color: #000000;
     pointer-events: none;
     margin-top: -25px;
+    font-weight: lighter;
 }
 
 input:hover{
@@ -70,8 +71,13 @@ input:hover{
 label {
     top: -25px;
     left: 0;
-    font-size: 14px;
     letter-spacing: 2px;
+    font-weight: lighter;
+    display: block;
+    padding: 10 0;
+    font-size: 16px;
+    color: #000000;
+    pointer-events: none;
 }
 
 form{
@@ -138,6 +144,7 @@ nav li a{
     font-size: 16px;
     color: #000000;
     pointer-events: none;
+    font-weight: lighter;
 }
 
 .preferences label {
@@ -146,6 +153,7 @@ nav li a{
     font-size: 16px;
     color: #000000;
     pointer-events: none;
+    font-weight: lighter;
 }
 
 
@@ -187,17 +195,9 @@ nav li a{
     align-items: center;
 }
 
-label {
-    display: block;
-    padding: 10 0;
-    font-size: 16px;
-    color: #000000;
-    pointer-events: none;
-    
-}
-
 .about-you label{
     display: inline;
+    font-weight: lighter;
 }
 
 #pref{

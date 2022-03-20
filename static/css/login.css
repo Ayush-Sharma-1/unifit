@@ -11,6 +11,12 @@
     height:100vh;
 }
 
+#pass{
+    background: url('/static/images/background9.jpg') no-repeat fixed center;
+    background-size: cover;
+    height:100vh;
+}
+
 .box {
     position: absolute;
     top: 60%;
@@ -18,7 +24,6 @@
     transform: translate(-50%, -50%);
     width: 420px;
     padding:50px;
-    /*background: rgba(0, 0, 0, 0.8);*/
     background: rgba(255, 255, 255, 0.8);
     box-sizing: border-box;
     box-shadow: 0 15 25 rgba(255, 255, 255, 0.5);
@@ -48,6 +53,7 @@
     background: #FFFFFF;
 }
 
+
 .box .inputBox input:hover{
     outline: #C2E812;
 }
@@ -61,6 +67,7 @@
     color: #000000;
     pointer-events: none;
     margin-top: -25px;
+    font-weight: lighter;
 }
 
 input:hover{
@@ -72,6 +79,7 @@ label {
     left: 0;
     font-size: 15px;
     letter-spacing: 2px;
+    font-weight: lighter;
 }
 
 form{
