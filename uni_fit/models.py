@@ -30,10 +30,10 @@ class Users(models.Model):
         verbose_name_plural = "Users"
 
     def __str__(self):
-        return self.text
+        return self.UserId
 
 class University(models.Model):
-    UniId = models.AutoField(primary_key=True, default=0)
+    UniId = models.AutoField(primary_key=True, auto_created=True)
     UniName = models.CharField(max_length=100, unique=True, default='TestName')
     Country = models.CharField(max_length=100)
     UniRank = models.IntegerField(default=0)
@@ -45,20 +45,20 @@ class University(models.Model):
         verbose_name_plural = "Universities"
 
     def __str__(self):
-        return self.text
+        return self.UniName
 
 class University_Department(models.Model):
-    DeptId = models.AutoField(primary_key=True, default=0)
+    DeptId = models.AutoField(primary_key=True, auto_created=True)
     UniId = models.ForeignKey(University, on_delete=models.CASCADE, default=0)
     DeptName = models.CharField(max_length=100)
-    DeptRank = models.IntegerField
+    DeptRank = models.IntegerField(default=0)
     Link = models.CharField(max_length=500)
 
     class Meta:
         verbose_name_plural = "University_Departments"    
 
     def __str__(self):
-        return self.text     
+        return self.DeptName    
 
 class Review(models.Model):
     UniId = models.IntegerField
@@ -72,7 +72,7 @@ class Review(models.Model):
         verbose_name_plural = "Reviews"     
 
     def __str__(self):
-        return self.text 
+        return self.UniId
 
 
 class Reddit(models.Model):
@@ -84,7 +84,7 @@ class Reddit(models.Model):
         verbose_name_plural = "Reddits"     
 
     def __str__(self):
-        return self.text 
+        return self.UniName 
 
 # this is just an extra model i used to create comments for, the comment model refers to this
 # but for the final code we would need to use the University model rather than
