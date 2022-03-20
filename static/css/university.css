@@ -10,15 +10,15 @@ h1{
     text-align: center;
     font-weight: 700;
     color: #031A5B;
+    font-size: 50px;
 }
 
 h3{
     background-color: #031A5B;
-    margin-left: 80px;
     padding-bottom: 15px;
     padding-top: 15px;
     color: #FFFFFF;
-    width: 30%;
+    width: 100%;
     font-weight: 700;
     text-align: center;
 }
@@ -29,8 +29,8 @@ i{
 
 .post{
     border: 2px solid  #031A5B;
-    width: 30%;
-    margin-left: 80px;
+    width: 100%;
+    
     padding: 5px;
     margin-top: -12px;
 }
@@ -45,13 +45,39 @@ i{
 }
 
 .reddit{
-    background-color: aqua;
     overflow:auto ;
     text-align: justify;
     margin: 30px;
+    height:300px;
+    width:30%;
+    margin-left: 100px;
 }
 
 .reddit a{
     text-decoration: none;
 }
 
+.uni-image{
+    width: 29%;
+    margin-left: 110px;
+}
+
+.section1 div{
+    display: inline;
+}
+
+.uni-info{
+    background-color: aqua;
+    margin-left: 110px;
+    width: 500px;
+}
+
+
+.review-section{
+    overflow:auto ;
+    text-align: justify;
+    margin: 30px;
+    height:300px;
+    width:70%;
+    margin-left: 100px;
+}
