@@ -24,8 +24,8 @@ University Name
     </div>
 </div>
 
-<div class="section2">
-    <div class="reddit">
+<div class="section2 row">
+    <div class="reddit column1">
         {% if result_list %}
         <h3><i class="fab fa-reddit-square fa-2xl"></i>Popular Reddit Posts</h3>
        
@@ -46,10 +46,12 @@ University Name
         {% endif %}
     </div>
 
-    <div class="review-section">
+    <div class="review-section column2">
         <h3>{{ comments.count }} Reviews </h3>
 
     </div>
+
+
 </div>
 
 {% endblock %}
