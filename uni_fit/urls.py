@@ -10,5 +10,5 @@ urlpatterns = [
     path('university/',views.reddit, name='reddit'),
     path('fav/<int:id>',views.favourite_add, name='favourite_add'),
     path('favourites/',views.favourite_list, name='favourite_list'),
-
+    path('review/', views.post_detail, name='post_detail')
 ]
