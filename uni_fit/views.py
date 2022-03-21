@@ -16,12 +16,19 @@ def index(request):
 
 @login_required
 def home(request):
-    context_dict = {}
-    university_list = University.objects.all().order_by('UniRank')
-    context_dict['universities'] = university_list
+    universities = University.objects.all().order_by('UniRank')
     countrylist=University.objects.all().values_list('Country', flat=True).distinct()
-    departmentlist=University_Department.objects.all().values_list('DeptName', flat=True).distinct()
-    return render(request, 'uni_fit/home.html', {'universities': university_list, 'countrylist':countrylist, 'departmentlist':departmentlist} )
+    departmentlist=University_Department.objects.all().values_list('DeptName', flat=True).distinct()    
+    if 'countrydropdown' in request.GET:
+        countrydropdown = request.GET['countrydropdown']
+        if countrydropdown!='all':
+            universities = universities.filter(Country=countrydropdown)
+    if 'departmentdropdown' in request.GET:
+        departmentdropdown = request.GET['departmentdropdown']
+        UniName=University_Department.objects.filter(DeptName=departmentdropdown[0]).values_list('UniName', flat=True)
+        if departmentdropdown!='all':
+            universities = universities.filter(UniName=UniName )
+    return render(request, 'uni_fit/home.html', {'universities': universities, 'countrylist':countrylist, 'departmentlist':departmentlist} )
 
 def profile(request):
     return render(request, 'uni_fit/profile.html',)
