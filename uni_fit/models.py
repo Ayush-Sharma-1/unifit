@@ -96,7 +96,7 @@ class Post(models.Model):
         return self.title
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
+    uni = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
     title = models.CharField(max_length=80)
     comment = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
