@@ -75,37 +75,36 @@ def pop_University():
 
 def pop_University_Department():
     UniversityDepartment = [
-
-                    {'UniId':University.objects.filter(pk=1).first(),'DeptName':'Engineering', 'DeptRank':'1','Link':'https://engineering.mit.edu/'},
-                    {'UniId':University.objects.filter(pk=2).first(),'DeptName':'Engineering', 'DeptRank':'2','Link':'https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/engineering-science'},
-                    {'UniId':University.objects.filter(pk=3).first(),'DeptName':'Engineering', 'DeptRank':'3','Link':'https://engineering.stanford.edu/'},
-                    {'UniId':University.objects.filter(pk=4).first(),'DeptName':'Engineering', 'DeptRank':'4','Link':'https://www.undergraduate.study.cam.ac.uk/courses/engineering'},
-                    {'UniId':University.objects.filter(pk=5).first(),'DeptName':'Engineering', 'DeptRank':'5','Link':'https://www.seas.harvard.edu/'},
-                    {'UniId':University.objects.filter(pk=6).first(),'DeptName':'Engineering', 'DeptRank':'6','Link':'https://eas.caltech.edu/'},
-                    {'UniId':University.objects.filter(pk=7).first(),'DeptName':'Engineering', 'DeptRank':'8','Link':'https://www.ucl.ac.uk/prospective-students/undergraduate/degrees?query=Engineering&p0='},
-                    {'UniId':University.objects.filter(pk=8).first(),'DeptName':'Engineering', 'DeptRank':'20','Link':'https://www.princeton.edu/academics/areas-of-study/engineering'},
-                    {'UniId':University.objects.filter(pk=9).first(),'DeptName':'Engineering', 'DeptRank':'26','Link':'https://www.utoronto.ca/academics/programs-directory?field_degrees_value=1&query=+Engineering'},
-                    {'UniId':University.objects.filter(pk=10).first(),'DeptName':'Engineering', 'DeptRank':'27','Link':'https://www.mcgill.ca/undergraduate-admissions/programs?f%5B0%5D=field_areas_interest%3A20'},
-                    {'UniId':University.objects.filter(pk=11).first(),'DeptName':'Engineering', 'DeptRank':'28','Link':'https://programsandcourses.anu.edu.au/degree-builder/area-of-interest? career=undergraduate&areaOfInterest=engineering'},
-                    {'UniId':University.objects.filter(pk=12).first(),'DeptName':'Engineering', 'DeptRank':'37','Link':'https://study.unimelb.edu.au/find/'},
-                    {'UniId':University.objects.filter(pk=13).first(),'DeptName':'Engineering', 'DeptRank':'38','Link':'https://www.sydney.edu.au/courses/search.html?keywords=engineering&search-type=course&course-level=uc&page=1'},
-                    {'UniId':University.objects.filter(pk=14).first(),'DeptName':'Engineering', 'DeptRank':'43','Link':'https://www.unsw.edu.au/study/find-a-degree-or-course/degree-search- results#search=Engineering&sort=relevance&startRank=1&numRanks=12'},
-                    {'UniId':University.objects.filter(pk=15).first(),'DeptName':'Engineering', 'DeptRank':'46','Link':'https://you.ubc.ca/programs/#mode=by-topic&viewMode=list&filters[search]=Engineering'},
-                    {'UniId':University.objects.filter(pk=16).first(),'DeptName':'Engineering', 'DeptRank':'47','Link':'https://future-students.uq.edu.au/study/programs?search=engineering&year=2022'},
-                    {'UniId':University.objects.filter(pk=17).first(),'DeptName':'Engineering', 'DeptRank':'49','Link':'https://www.ip-paris.fr/en/topics/engineer-programs'},
-                    {'UniId':University.objects.filter(pk=18).first(),'DeptName':'Engineering', 'DeptRank':'52','Link':'https://psl.eu/formations?field_discipline=Engineering%20Science%20(225)'},
-                    {'UniId':University.objects.filter(pk=19).first(),'DeptName':'Engineering', 'DeptRank':'68','Link':'https://programmes.polytechnique.edu/en/bachelor/bachelor-of-science'},
-                    {'UniId':University.objects.filter(pk=20).first(),'DeptName':'Engineering', 'DeptRank':'73','Link':'https://www.gla.ac.uk/schools/engineering/'},
-                    {'UniId':University.objects.filter(pk=21).first(),'DeptName':'Engineering', 'DeptRank':'83','Link':'https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation-par-discipline'},
-                    {'UniId':University.objects.filter(pk=22).first(),'DeptName':'Engineering', 'DeptRank':'138','Link':'https://www.centralesupelec.fr/en/engineering-curriculum'},
-                    {'UniId':University.objects.filter(pk=23).first(),'DeptName':'Engineering', 'DeptRank':'149','Link':'https://www.exeter.ac.uk/undergraduate/courses/engineering/'},
-                    {'UniId':University.objects.filter(pk=24).first(),'DeptName':'Engineering', 'DeptRank':'149','Link':'https://uwaterloo.ca/future-students/missing-manual/applying/how-choose-program-faculty-engineering'},
-                    {'UniId':University.objects.filter(pk=25).first(),'DeptName':'Engineering', 'DeptRank':'298','Link':'https://www.sfu.ca/students/admission/programs/a-z/e/engineering-science/overview.html'}
+                    {'UniName':University.objects.filter(pk=1).first(),'DeptName':'Engineering', 'DeptRank':'1','Link':'https://engineering.mit.edu/'},
+                    {'UniName':University.objects.filter(pk=2).first(),'DeptName':'Engineering', 'DeptRank':'2','Link':'https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/engineering-science'},
+                    {'UniName':University.objects.filter(pk=3).first(),'DeptName':'Engineering', 'DeptRank':'3','Link':'https://engineering.stanford.edu/'},
+                    {'UniName':University.objects.filter(pk=4).first(),'DeptName':'Engineering', 'DeptRank':'4','Link':'https://www.undergraduate.study.cam.ac.uk/courses/engineering'},
+                    {'UniName':University.objects.filter(pk=5).first(),'DeptName':'Engineering', 'DeptRank':'5','Link':'https://www.seas.harvard.edu/'},
+                    {'UniName':University.objects.filter(pk=6).first(),'DeptName':'Engineering', 'DeptRank':'6','Link':'https://eas.caltech.edu/'},
+                    {'UniName':University.objects.filter(pk=7).first(),'DeptName':'Engineering', 'DeptRank':'8','Link':'https://www.ucl.ac.uk/prospective-students/undergraduate/degrees?query=Engineering&p0='},
+                    {'UniName':University.objects.filter(pk=8).first(),'DeptName':'Engineering', 'DeptRank':'20','Link':'https://www.princeton.edu/academics/areas-of-study/engineering'},
+                    {'UniName':University.objects.filter(pk=9).first(),'DeptName':'Engineering', 'DeptRank':'26','Link':'https://www.utoronto.ca/academics/programs-directory?field_degrees_value=1&query=+Engineering'},
+                    {'UniName':University.objects.filter(pk=10).first(),'DeptName':'Engineering', 'DeptRank':'27','Link':'https://www.mcgill.ca/undergraduate-admissions/programs?f%5B0%5D=field_areas_interest%3A20'},
+                    {'UniName':University.objects.filter(pk=11).first(),'DeptName':'Engineering', 'DeptRank':'28','Link':'https://programsandcourses.anu.edu.au/degree-builder/area-of-interest? career=undergraduate&areaOfInterest=engineering'},
+                    {'UniName':University.objects.filter(pk=12).first(),'DeptName':'Engineering', 'DeptRank':'37','Link':'https://study.unimelb.edu.au/find/'},
+                    {'UniName':University.objects.filter(pk=13).first(),'DeptName':'Engineering', 'DeptRank':'38','Link':'https://www.sydney.edu.au/courses/search.html?keywords=engineering&search-type=course&course-level=uc&page=1'},
+                    {'UniName':University.objects.filter(pk=14).first(),'DeptName':'Engineering', 'DeptRank':'43','Link':'https://www.unsw.edu.au/study/find-a-degree-or-course/degree-search- results#search=Engineering&sort=relevance&startRank=1&numRanks=12'},
+                    {'UniName':University.objects.filter(pk=15).first(),'DeptName':'Engineering', 'DeptRank':'46','Link':'https://you.ubc.ca/programs/#mode=by-topic&viewMode=list&filters[search]=Engineering'},
+                    {'UniName':University.objects.filter(pk=16).first(),'DeptName':'Engineering', 'DeptRank':'47','Link':'https://future-students.uq.edu.au/study/programs?search=engineering&year=2022'},
+                    {'UniName':University.objects.filter(pk=17).first(),'DeptName':'Engineering', 'DeptRank':'49','Link':'https://www.ip-paris.fr/en/topics/engineer-programs'},
+                    {'UniName':University.objects.filter(pk=18).first(),'DeptName':'Engineering', 'DeptRank':'52','Link':'https://psl.eu/formations?field_discipline=Engineering%20Science%20(225)'},
+                    {'UniName':University.objects.filter(pk=19).first(),'DeptName':'Engineering', 'DeptRank':'68','Link':'https://programmes.polytechnique.edu/en/bachelor/bachelor-of-science'},
+                    {'UniName':University.objects.filter(pk=20).first(),'DeptName':'Engineering', 'DeptRank':'73','Link':'https://www.gla.ac.uk/schools/engineering/'},
+                    {'UniName':University.objects.filter(pk=21).first(),'DeptName':'Engineering', 'DeptRank':'83','Link':'https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation-par-discipline'},
+                    {'UniName':University.objects.filter(pk=22).first(),'DeptName':'Engineering', 'DeptRank':'138','Link':'https://www.centralesupelec.fr/en/engineering-curriculum'},
+                    {'UniName':University.objects.filter(pk=23).first(),'DeptName':'Engineering', 'DeptRank':'149','Link':'https://www.exeter.ac.uk/undergraduate/courses/engineering/'},
+                    {'UniName':University.objects.filter(pk=24).first(),'DeptName':'Engineering', 'DeptRank':'149','Link':'https://uwaterloo.ca/future-students/missing-manual/applying/how-choose-program-faculty-engineering'},
+                    {'UniName':University.objects.filter(pk=25).first(),'DeptName':'Engineering', 'DeptRank':'298','Link':'https://www.sfu.ca/students/admission/programs/a-z/e/engineering-science/overview.html'}
                    ]
 
 
     for u in UniversityDepartment:
-        University_Department.objects.get_or_create(DeptName=u['DeptName'], DeptRank=u['DeptRank'], Link=u['Link'],UniId=u['UniId'])
+        University_Department.objects.get_or_create(DeptName=u['DeptName'], DeptRank=u['DeptRank'], Link=u['Link'],UniName=u['UniName'])
 
 
 def pop_Reddit():

@@ -49,7 +49,7 @@ class University(models.Model):
 
 class University_Department(models.Model):
     DeptId = models.AutoField(primary_key=True, auto_created=True)
-    UniId = models.ForeignKey(University, on_delete=models.CASCADE, default=0)
+    UniName = models.ForeignKey(University, on_delete=models.CASCADE, default=0)
     DeptName = models.CharField(max_length=100)
     DeptRank = models.IntegerField(default=0)
     Link = models.CharField(max_length=500)
