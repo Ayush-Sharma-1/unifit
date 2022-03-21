@@ -33,7 +33,7 @@ li {
 }
 
 .nav-item{
-    padding: 3px 40px;
+    padding: 3px 10px;
 }
 
 nav li{
@@ -51,7 +51,9 @@ nav img{
     width: auto;
     padding: 5px;
 }
-
+#show{
+    margin-right: 65rem;
+}
 #show:hover{
     background-color: #FFFFFF;
 }
@@ -65,6 +67,7 @@ nav img{
     color: #031A5B;
     background-color: #FFFFFF;
 }
+
 
 #logout:hover {
     background:#FFFFFF ;
@@ -84,4 +87,14 @@ nav img{
     color: #ffffff;
     margin-top: 25px;
     align-items: flex-end;
+}
+
+#favs{
+    color: #38B6FF;
+    padding-top: 42px;
+}
+
+#favs:hover{
+    color: #031A5B;
+    background-color: #FFFFFF;
 }

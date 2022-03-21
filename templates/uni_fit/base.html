@@ -33,18 +33,19 @@
                 <li>
                     <a id="show" href="{% url 'uni_fit:home' %}"><img src="/static/images/logo.png"></a>
                 </li>
-
+    
                 <li class="nav-item">
                   <a class="nav-link" id="hello-user" href="{% url 'uni_fit:profile' %}">Hello, {{user.username}}!</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link active" id="logout" href="{% url 'auth_logout' %}?next={% url 'uni_fit:index' %}">Logout</a>
+                    <a class="nav-link" id="favs" href="{% url 'uni_fit:favourite_list' %}">My Favourites</a>
                 </li>
 
-                <li>
-                    <a class="nav-link" href="{% url 'uni_fit:favourite_list' %}">Favourites</a>
+                <li class="nav-item">
+                  <a class="nav-link active" id="logout" href="{% url 'auth_logout' %}?next={% url 'uni_fit:index' %}">Logout</a>
                 </li>
+       
 
                 {% else %}
                 <!-- Show these links when the user is logged out -->
