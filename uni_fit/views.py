@@ -43,10 +43,10 @@ def favourite_list(request):
 def reddit(request):
     result_list = []
     result_list = get_posts()
-    return render(request, 'uni_fit/university.html', {'result_list': result_list})
+    #return render(request, 'uni_fit/university.html', {'result_list': result_list})
 
-def post_detail(request):
-    template_name = 'uni_fit/review.html'
+#def post_detail(request):
+    template_name = 'uni_fit/university.html'
     post = get_object_or_404(Post)
     comments = post.comments.filter(active=True)
     new_comment = None
@@ -68,4 +68,5 @@ def post_detail(request):
     return render(request, template_name, {'post': post,
                                            'comments': comments,
                                            'new_comment': new_comment,
-                                           'comment_form': comment_form})
+                                           'comment_form': comment_form,
+                                           'result_list': result_list})
