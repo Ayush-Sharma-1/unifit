@@ -58,8 +58,9 @@ i{
 }
 
 .uni-image{
-    width: 30%;
-    margin-left: 90px;
+    width: 100%;
+    margin-left: 100px;
+    
 }
 
 .section1 div{
@@ -67,9 +68,11 @@ i{
 }
 
 .uni-info{
+    font-size: 28px;
     color: #FFFFFF;
     background-color: #031A5B;
-    margin-left: 50px;
+    margin-left: 130px;
+    padding: 40px;
 }
 
 
@@ -96,4 +99,12 @@ i{
     content: "";
     display: table;
     clear: both;
+}
+
+
+
+@media (min-width: 992px){
+    .col-md-8 {
+        width: 100%;
+    }
 }
