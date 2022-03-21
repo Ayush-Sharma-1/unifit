@@ -10,7 +10,7 @@
 <div id="category-banner" class="text-center">
     <div class="container-fluid">
         <h1 class="heading">Welcome to UniFit</h1>
-        <select id="country-dropdown" onchange="getCountry(this.value);">
+        <select id="country-dropdown">
             <option selected value="all">Country</option>
             {% for c in countrylist %}
             <option >{{ c }}</option>
@@ -21,7 +21,7 @@
 
 <div class="text-center">
     <div class="select-wrapper">
-        <select id="department-dropdown" onchange="getDepartment(this.value);">
+        <select id="department-dropdown">
             <option selected value="all">Department</option>
             {% for c in departmentlist %}
             <option>{{ c }}</option>
