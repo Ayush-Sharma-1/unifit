@@ -8,7 +8,8 @@ from django.contrib.auth.decorators import login_required
 import profile
 from stat import FILE_ATTRIBUTE_SPARSE_FILE
 from uni_fit.reddit import get_posts
-from uni_fit.models import University, Users, Post
+from uni_fit.models import University, Users, Post, University_Department
+
 
 def index(request):
     return render(request, 'uni_fit/index.html',)
@@ -18,7 +19,9 @@ def home(request):
     context_dict = {}
     university_list = University.objects.all().order_by('UniRank')
     context_dict['universities'] = university_list
-    return render(request, 'uni_fit/home.html', context=context_dict)
+    countrylist=University.objects.all().values_list('Country', flat=True).distinct()
+    departmentlist=University_Department.objects.all().values_list('DeptName', flat=True).distinct()
+    return render(request, 'uni_fit/home.html', {'universities': university_list, 'countrylist':countrylist, 'departmentlist':departmentlist} )
 
 def profile(request):
     return render(request, 'uni_fit/profile.html',)

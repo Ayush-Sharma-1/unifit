@@ -6,14 +6,13 @@
 
 {% block body_block %}
 
-
 <div id="category-banner" class="text-center">
     <div class="">
         <h1 style="color:white;">Welcome to UniFit</h1>
         <select id="category-dropdown" onchange="getCountry(this.value);">
             <option selected value="0">Country</option>
-            {% for c in university.country %}
-            <option value="{{ c.id }}">{{ c.CountryName }}</option>
+            {% for c in countrylist %}
+            <option >{{ c }}</option>
             {% endfor %}
         </select>
         <span><i class="fas fa-chevron-circle-down"></i></span>
@@ -24,8 +23,8 @@
     <div class="select-wrapper">
         <select id="category-dropdown" onchange="getUniversities(this.value);">
             <option selected value="0">Department</option>
-            {% for c in university %}
-            <option value="{{ c.id }}">{{ c.CountryName }}</option>
+            {% for c in departmentlist %}
+            <option>{{ c }}</option>
             {% endfor %}
         </select>
         <span><i class="fas fa-chevron-circle-down"></i></span>
