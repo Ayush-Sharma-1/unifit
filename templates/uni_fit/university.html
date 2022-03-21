@@ -14,13 +14,16 @@ University Name
 
 <h1>University of Glasgow</h1>
 <br></br>
-<div class="section1">
-    <div>
+<div class="section1 row">
+    <div class="column1">
         <img class="uni-image" src="/static/images/background2.jpg" alt="picture of university">
     </div>
 
-    <div class="uni-info">
-        add some info here
+    <div class="uni-info column2">
+        <!-- REPLACE THIS WITH POPULATION SCRIPT 'ABOUT' INFO -->
+        The University of Glasgow is a public research university in Glasgow, Scotland.
+        Founded by papal bull in 1451, it is the fourth-oldest university in the English
+        -speaking world and one of Scotland's four ancient universities.
     </div>
 </div>
 
@@ -28,9 +31,9 @@ University Name
     <div class="reddit column1">
         {% if result_list %}
         <h3><i class="fab fa-reddit-square fa-2xl"></i>Popular Reddit Posts</h3>
-       
-            {% for result in result_list %}
-            <div>
+
+        {% for result in result_list %}
+        <div>
             <p class="post">
                 <!--<strong>SUBREDDIT: </strong> {{ result.subreddit }}-->
                 <a href="{{ result.url }}" target=”_blank”><strong>{{ result.title }} </strong></a>
@@ -41,17 +44,50 @@ University Name
                 <strong>SCORE:</strong> {{ result.score }}
                 <strong>URL:</strong> {{ result.url }}-->
             </p>
-            </div>
+        </div>
         {% endfor %}
         {% endif %}
     </div>
 
     <div class="review-section column2">
         <h3>{{ comments.count }} Reviews </h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 card mb-4  mt-3 ">
+                    <div class="card-body">
+                        <!-- reviews -->
+                        {% for comment in comments %}
+                        <div class="comments" style="padding: 10px;">
+                            <p class="font-weight-bold">
+                                {{ comment.title }}
+                                <span class=" text-muted font-weight-normal">
+                                    {{ comment.created_on }}
+                                </span>
+                            </p>
+                            {{ comment.comment | linebreaks }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
     </div>
 
 
 </div>
+<div class="col-md-8 card mb-4  mt-3 ">
+    <div class="card-body">
+        <h3>Leave a Review</h3>
+        {% load crispy_forms_tags %}
+        <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary  btn-lg">Submit Review</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
+

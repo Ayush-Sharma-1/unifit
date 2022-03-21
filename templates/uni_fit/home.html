@@ -7,34 +7,32 @@
 {% block body_block %}
 
 <div id="category-banner" class="text-center">
-    <div class="">
+    <div class="container-fluid">
         <h1 style="color:white;">Welcome to UniFit</h1>
-        <select id="category-dropdown" onchange="getCountry(this.value);">
-            <option selected value="0">Country</option>
+        <select id="country-dropdown" onchange="getCountry(this.value);">
+            <option selected value="all">Country</option>
             {% for c in countrylist %}
             <option >{{ c }}</option>
             {% endfor %}
-        </select>
-        <span><i class="fas fa-chevron-circle-down"></i></span>
+        </select>       
     </div>
 </div>
 
 <div class="text-center">
     <div class="select-wrapper">
-        <select id="category-dropdown" onchange="getUniversities(this.value);">
-            <option selected value="0">Department</option>
+        <select id="department-dropdown" onchange="getDepartment(this.value);">
+            <option selected value="all">Department</option>
             {% for c in departmentlist %}
             <option>{{ c }}</option>
             {% endfor %}
         </select>
-        <span><i class="fas fa-chevron-circle-down"></i></span>
     </div>
 </div>
 
-<div class="center">
-    <table>
-        <tr style="text-align: center;">
-            <th>Department Rank</th>
+<div class="center" style="margin: auto;">
+    <table id="unitable">
+        <tr>
+            <th>University Rank</th>
             <th>University</th>
         </tr>
         {% for university in universities %}
@@ -50,11 +48,8 @@
 <!--CSS & JS-->
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 {% load static %}
 <script src="{% static 'unifit\static\js\home.js' %}"></script>
-<script>
-    getUniversities(0);
-</script>
-
 {% endblock %}
 

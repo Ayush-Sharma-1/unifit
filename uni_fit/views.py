@@ -40,15 +40,15 @@ def favourite_list(request):
     fav_list = University.objects.filter(FavouriteUnversity=request.user.id)
     return render(request, 'uni_fit/favourites.html', {'fav_list': fav_list})
 
-def reddit(request):
+def university(request):
     result_list = []
     result_list = get_posts()
-    return render(request, 'uni_fit/university.html', {'result_list': result_list})
+    #return render(request, 'uni_fit/university.html', {'result_list': result_list})
 
-def post_detail(request):
-    template_name = 'uni_fit/review.html'
-    post = get_object_or_404(Post)
-    comments = post.comments.filter(active=True)
+#def post_detail(request):
+    template_name = 'uni_fit/university.html'
+    uni = get_object_or_404(Post)
+    comments = uni.comments.filter(active=True)
     new_comment = None
     # Comment posted
     if request.method == 'POST':
@@ -58,14 +58,15 @@ def post_detail(request):
             # Create Comment object but don't save to database yet
             new_comment = comment_form.save(commit=False)
             # Assign the current post to the comment
-            new_comment.post = post
+            new_comment.uni = uni
             # Save the comment to the database
             new_comment.save()
             comment_form = CommentForm()
     else:
         comment_form = CommentForm()
     
-    return render(request, template_name, {'post': post,
+    return render(request, template_name, {'uni': uni,
                                            'comments': comments,
                                            'new_comment': new_comment,
-                                           'comment_form': comment_form})
+                                           'comment_form': comment_form,
+                                           'result_list': result_list})
