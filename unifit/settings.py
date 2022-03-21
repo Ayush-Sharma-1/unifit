@@ -138,7 +138,7 @@ REGISTRATION_OPEN = True
 REGISTRATION_AUTO_LOGIN = False
 LOGIN_REDIRECT_URL = 'uni_fit:home'
 LOGIN_URL = 'auth_login'
-
+SIMPLE_BACKEND_REDIRECT_URL = 'uni_fit:home'
 
 # review form 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
