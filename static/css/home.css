@@ -1,63 +1,78 @@
-h1{
-    font-weight: 700;
-    font-size: 50px;
-    padding-top: 52px;
-    padding-bottom: 5px;
-}
 
 #category-banner{
-    width: 100%;
-    height: 40vh;
-    background-color: rgb(70, 125, 226);
-    overflow: auto;
-    background-image: url('/static/images/background12.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  width: 100%;
+  height: 40vh;
+  overflow: auto;
+  background-image: url('/static/images/background12.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #031A5B;
 }
 
+
 .select-wrapper {
-    height:300;
-    
+  height:300;
+  padding: 30px;
 }
 
 #country-dropdown{
-    font-size: 30px;
-    border-radius: 50px;
-    padding: 15px 70px 15px 40px;
-    text-align-last:center;
-    border:black;
-    font-weight: bold;
+  font-size: 30px;
+  border-radius: 50px;
+  padding: 15px 70px 15px 40px;
+  text-align-last:center;
+  border:black;
+  font-weight: bold;
 }
 
 #department-dropdown{
-    font-size: 30px;
-    border-radius: 50px;
-    padding: 15px 70px 15px 40px;
-    text-align-last:center;
-    border:black;
-    font-weight: bold;
+  font-size: 30px;
+  border-radius: 50px;
+  padding: 15px 70px 15px 40px;
+  text-align-last:center;
+  border:black;
+  font-weight: bold;
 }
 
 .center {
     margin: auto;
     width: 60%;
-    border: 3px solid rgb(99, 99, 250);
     padding: 1%;
     text-align: center;
-  }
+    background-color: #FFFFFF;
+    margin: 20px;
+    color: #000000;
+}
 
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-  }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #FFFFFF;
+}
 
-  th, td {
-    text-align: justify;
-  }
+th, td {
+  text-align: justify;
+}
 
-  tr:nth-child(even) {
-    background-color: #e7ecf5;
-  }
+tr:nth-child(even) {
+  background-color: #e7ecf5;
+}
+
+#uni-list{
+  background-color: #031A5B;
+  padding-bottom: 40px;
+}
+
+.heading{
+  color:white;
+  font-weight: 700;
+  font-size: 50px;
+  padding-top: 52px;
+  padding-bottom: 5px;
+}
+
+.rank{
+  justify-content: center;
+  text-align: center;
+}

@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block body_block %}
+<div id="uni-list">
 
 <div id="category-banner" class="text-center">
     <div class="container-fluid">
-        <h1 style="color:white;">Welcome to UniFit</h1>
+        <h1 class="heading">Welcome to UniFit</h1>
         <select id="country-dropdown" onchange="getCountry(this.value);">
             <option selected value="all">Country</option>
             {% for c in countrylist %}
@@ -32,19 +33,19 @@
 <div class="center" style="margin: auto;">
     <table id="unitable">
         <tr>
-            <th>University Rank</th>
+            <th class="rank">University Rank</th>
             <th>University</th>
         </tr>
         {% for university in universities %}
             <tr>
-                <td>{{university.UniRank}}</td>
+                <td class="rank">{{university.UniRank}}</td>
                 <td>{{university.UniName }}</td>
                 <td><a href="{% url 'uni_fit:favourite_add' user.id %}">Add to Favourties</a></td>
             </tr>
         {% endfor %}
     </table>
 </div>  
-
+</div>
 <!--CSS & JS-->
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
