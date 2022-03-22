@@ -19,15 +19,17 @@ def home(request):
     universities = University.objects.all().order_by('UniRank')
     countrylist=University.objects.all().values_list('Country', flat=True).distinct()
     departmentlist=University_Department.objects.all().values_list('DeptName', flat=True).distinct()    
-    if 'countrydropdown' in request.GET:
-        countrydropdown = request.GET['countrydropdown']
-        if countrydropdown!='all':
-            universities = universities.filter(Country=countrydropdown)
-    if 'departmentdropdown' in request.GET:
-        departmentdropdown = request.GET['departmentdropdown']
+    if 'countrydropdown' in request.GET or 'departmentdropdown' in request.GET:
+        countrydropdown = request.GET.get('countrydropdown')
+        departmentdropdown = request.GET.get('departmentdropdown')
+        print("CountryDropdown",countrydropdown)
         UniNameList=University_Department.objects.filter(DeptName=departmentdropdown).values_list('UniName', flat=True)
-        if departmentdropdown!='all':
+        if countrydropdown!='all' and countrydropdown is not None:
+            universities = universities.filter(Country=countrydropdown)
+            print("Uni List in Country if loop  ",universities)
+        if departmentdropdown!='all' and departmentdropdown is not None:
             universities = universities.filter(UniId__in=UniNameList)
+            print("Uni List in department if loop  ",universities)
     return render(request, 'uni_fit/home.html', {'universities': universities, 'countrylist':countrylist, 'departmentlist':departmentlist} )
 
 def profile(request):
