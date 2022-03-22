@@ -25,9 +25,9 @@ def home(request):
             universities = universities.filter(Country=countrydropdown)
     if 'departmentdropdown' in request.GET:
         departmentdropdown = request.GET['departmentdropdown']
-        UniName=University_Department.objects.filter(DeptName=departmentdropdown[0]).values_list('UniName', flat=True)
+        UniNameList=University_Department.objects.filter(DeptName=departmentdropdown).values_list('UniName', flat=True)
         if departmentdropdown!='all':
-            universities = universities.filter(UniName=UniName )
+            universities = universities.filter(UniId__in=UniNameList)
     return render(request, 'uni_fit/home.html', {'universities': universities, 'countrylist':countrylist, 'departmentlist':departmentlist} )
 
 def profile(request):
@@ -77,3 +77,6 @@ def university(request):
                                            'new_comment': new_comment,
                                            'comment_form': comment_form,
                                            'result_list': result_list})
+
+def s_university(request, id):
+    return(request)

@@ -19,8 +19,6 @@
             </select>       
         </div>
     </div>
-</form>
-<form action="{% url 'uni_fit:home' %}" method="GET" id="form_ddd">
     <div class="text-center">
         <div class="select-wrapper">
             <select id="departmentdropdown" name="departmentdropdown" onchange="this.form.submit()">
@@ -42,7 +40,7 @@
         {% for university in universities %}
             <tr>
                 <td class="rank">{{university.UniRank}}</td>
-                <td>{{university.UniName }}</td>
+                <td>{{university.UniName }}</a></td>
                 <td><a href="{% url 'uni_fit:favourite_add' user.id %}">Add to Favourties</a></td>
             </tr>
         {% endfor %}
