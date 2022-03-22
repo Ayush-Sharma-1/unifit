@@ -12,6 +12,7 @@ body {
 
 h1{
     font-weight: 700;
+    
 }
 
 li {
@@ -21,7 +22,7 @@ li {
 .login{
     font-weight: 500;
     font-size: 1em;
-    padding: 5px 20px;
+    padding: 5px 5px;
 }  
 
 .navbar{
@@ -30,18 +31,25 @@ li {
     font-weight: bold;
     color:#333;
     background-color:white;
+    
 }
 
 .nav-item{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 2%;
     padding: 3px 10px;
 }
 
 nav li{
-    display: inline;
+    display: inline-block;
     list-style: none;
 }
 
 ul{
+    margin-top: 0%;
+    margin-bottom: 0%;
     padding: 0px;
     margin: 0px;
 }
@@ -59,42 +67,66 @@ nav img{
 }
 
 #hello-user{
-    color: #38B6FF;
-    padding-top: 42px;
+    position: relative;
+    width: auto;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 10px;
+    border: 2px solid #031A5B;
+    padding: auto;
+    cursor: pointer;
+    background:#FFFFFF;
+    margin-top: 25px;
+    align-items: flex-end;
+    color:#031A5B;  
+    white-space: nowrap;
+    
 }
 
 #hello-user:hover{
-    color: #031A5B;
-    background-color: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #031A5B;
 }
 
 
 #logout:hover {
-    background:#FFFFFF ;
-    color: #38B6FF;
+    color:#FFFFFF ;
+    background-color: #031A5B;
 }
 
 #logout {
     position: relative;
-    width: 100%;
+    width: auto;
     font-size: 18px;
     font-weight: 800;
     border-radius: 10px;
-    border: 2px solid #38B6FF;
-    padding: 14px 28px;
+    border: 2px solid #031A5B;
+    padding: auto;
     cursor: pointer;
-    background: #38B6FF;
-    color: #ffffff;
+    background: #FFFFFF;
+    color: #031A5B;
     margin-top: 25px;
     align-items: flex-end;
+    white-space: nowrap;
 }
 
 #favs{
-    color: #38B6FF;
-    padding-top: 42px;
+    position: relative;
+    width: auto;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 10px;
+    border: 2px solid #031A5B;
+    padding: auto;
+    cursor: pointer;
+    background: #FFFFFF;
+    color: #031A5B;
+    margin-top: 25px;
+    align-items: flex-end;
+    white-space: nowrap;
 }
 
 #favs:hover{
-    color: #031A5B;
-    background-color: #FFFFFF;
+    color:#FFFFFF ;
+    background-color: #031A5B;
 }

@@ -26,14 +26,18 @@
 
     <body>
         <div>
-        <nav>
-            <ul class="nav">
+        <nav class="navbar navbar-expand-sm bg-light">
+            <ul>
                 {% if user.is_authenticated %}
                 <!-- Show these links when the user is logged in -->
-                <li>
+                <li style = "align-items: left;" >
                     <a id="show" href="{% url 'uni_fit:home' %}"><img src="/static/images/logo.png"></a>
                 </li>
-    
+                {% endif %}
+                </ul>
+                
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" id="hello-user" href="{% url 'uni_fit:profile' %}">Hello, {{user.username}}!</a>
                 </li>
@@ -54,7 +58,7 @@
                 </li>
                 {% endif %}
             </ul> 
-        <nav>
+        </nav>
         </div>
            
         <div>
