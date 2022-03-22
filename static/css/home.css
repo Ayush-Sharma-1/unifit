@@ -34,10 +34,8 @@
 }
 
 #countrydropdown{
-  float: left;
-  margin-left: 30%;
   margin-top: 2%;
-  margin-bottom: 1.5%;
+  margin-bottom: 0%;
   font-size: 20px;
   border-radius: 20px;
   padding: 15px 40px 15px 40px;
@@ -49,9 +47,7 @@
 }
 
 #departmentdropdown{
-  float: right;
-  margin-right: 30%;
-  margin-top: 2%;
+  margin-top: 1%;
   margin-bottom: 1.5%;
   font-size: 20px;
   border-radius: 20px;
