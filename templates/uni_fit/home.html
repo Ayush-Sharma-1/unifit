@@ -6,7 +6,7 @@
 
 {% block body_block %}
 <div id="uni-list">
-<form action="{% url 'uni_fit:home' %}" method="GET" id="form_cdd">
+<form action="{% url 'uni_fit:home' %}" method="GET" id="form_cdd" >
     <div id="category-banner" class="text-center">
         <div class="container-fluid">
             <h1 class="heading">Welcome to UniFit</h1>
@@ -40,7 +40,7 @@
         {% for university in universities %}
             <tr>
                 <td class="rank">{{university.UniRank}}</td>
-                <td>{{university.UniName }}</a></td>
+                <td><a href="{% url 'uni_fit:university' university.UniId %}">{{university.UniName }}</a></td>
                 <td><a href="{% url 'uni_fit:favourite_add' user.id %}">Add to Favourties</a></td>
             </tr>
         {% endfor %}

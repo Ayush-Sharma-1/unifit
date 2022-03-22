@@ -12,7 +12,7 @@ University Name
 <link rel="stylesheet" href="{% static 'css/university.css' %}">
 
 
-<h1>University of Glasgow</h1>
+<h1>{{ unidata.UniName }}</h1>
 <br></br>
 <div class="section1 row">
     <div class="column1">
@@ -21,9 +21,7 @@ University Name
 
     <div class="uni-info column2">
         <!-- REPLACE THIS WITH POPULATION SCRIPT 'ABOUT' INFO -->
-        The University of Glasgow is a public research university in Glasgow, Scotland.
-        Founded by papal bull in 1451, it is the fourth-oldest university in the English
-        -speaking world and one of Scotland's four ancient universities.
+        {{unidata.About}}
     </div>
 </div>
 

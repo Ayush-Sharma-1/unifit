@@ -16,18 +16,18 @@
   padding: 30px;
 }
 
-#country-dropdown{
-  font-size: 30px;
-  border-radius: 50px;
+#countrydropdown{
+  font-size: 20px;
+  border-radius: 30px;
   padding: 15px 70px 15px 40px;
   text-align-last:center;
   border:black;
   font-weight: bold;
 }
 
-#department-dropdown{
-  font-size: 30px;
-  border-radius: 50px;
+#departmentdropdown{
+  font-size: 20px;
+  border-radius: 30px;
   padding: 15px 70px 15px 40px;
   text-align-last:center;
   border:black;

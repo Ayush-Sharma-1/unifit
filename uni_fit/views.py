@@ -22,14 +22,11 @@ def home(request):
     if 'countrydropdown' in request.GET or 'departmentdropdown' in request.GET:
         countrydropdown = request.GET.get('countrydropdown')
         departmentdropdown = request.GET.get('departmentdropdown')
-        print("CountryDropdown",countrydropdown)
         UniNameList=University_Department.objects.filter(DeptName=departmentdropdown).values_list('UniName', flat=True)
         if countrydropdown!='all' and countrydropdown is not None:
             universities = universities.filter(Country=countrydropdown)
-            print("Uni List in Country if loop  ",universities)
         if departmentdropdown!='all' and departmentdropdown is not None:
             universities = universities.filter(UniId__in=UniNameList)
-            print("Uni List in department if loop  ",universities)
     return render(request, 'uni_fit/home.html', {'universities': universities, 'countrylist':countrylist, 'departmentlist':departmentlist} )
 
 def profile(request):
@@ -49,10 +46,13 @@ def favourite_list(request):
     fav_list = University.objects.filter(FavouriteUnversity=request.user.id)
     return render(request, 'uni_fit/favourites.html', {'fav_list': fav_list})
 
-def university(request):
+def university(request, id):
     result_list = []
     result_list = get_posts()
     #return render(request, 'uni_fit/university.html', {'result_list': result_list})
+
+    #university data for the page
+    unidata = University.objects.get(UniId=id)
 
 #def post_detail(request):
     template_name = 'uni_fit/university.html'
@@ -78,7 +78,6 @@ def university(request):
                                            'comments': comments,
                                            'new_comment': new_comment,
                                            'comment_form': comment_form,
-                                           'result_list': result_list})
+                                           'result_list': result_list,
+                                           'unidata': unidata})
 
-def s_university(request, id):
-    return(request)
