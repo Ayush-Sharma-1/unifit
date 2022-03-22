@@ -11,9 +11,8 @@ University Name
 <!-- CSS -->
 <link rel="stylesheet" href="{% static 'css/university.css' %}">
 
-<div style="background-image: url('/static/images/university-backgrounds/{{ unidata.UniId }}.jpg'); background-repeat: no-repeat;  background-position: center; background-size: cover;">">
+<div style="background-image: url('/static/images/university-backgrounds/{{ unidata.UniId }}.jpg'); background-repeat: no-repeat;  background-position: center; background-size: cover; height:900px;">
 <h1>{{ unidata.UniName }}</h1>
-<br></br>
 
 
     <div class="uni-info column1">
@@ -22,8 +21,8 @@ University Name
     </div>
 
 
-<div class="section2 row">
-    <div class="reddit column2">
+
+    <div class="reddit">
         {% if result_list %}
         <h3><i class="fab fa-reddit-square fa-2xl"></i>Popular Reddit Posts</h3>
         
@@ -46,7 +45,7 @@ University Name
     </div>
 
     <div class="review-section column3">
-        <h3>{{ comments.count }} Reviews </h3>
+        <h3 class="review-heading">{{ comments.count }} Reviews </h3>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 card mb-4  mt-3 ">
@@ -67,10 +66,7 @@ University Name
                 </div>
             </div>
         </div>
-        
-
     </div>
-</div>
 
 </div>
 <div class="col-md-8 card mb-4  mt-3 ">

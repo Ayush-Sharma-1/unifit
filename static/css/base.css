@@ -4,6 +4,9 @@
 *{
     font-family:'Poppins';
 }
+
+
+
 body {
     background-color: #FFFFFF;
     min-height: 100%;
@@ -59,9 +62,7 @@ nav img{
     width: auto;
     padding: 5px;
 }
-#show{
-    margin-right: 65rem;
-}
+
 #show:hover{
     background-color: #FFFFFF;
 }
@@ -129,4 +130,8 @@ nav img{
 #favs:hover{
     color:#FFFFFF ;
     background-color: #031A5B;
+}
+
+.navbar{
+    margin-bottom: 0px;
 }

@@ -6,11 +6,12 @@
 }
 
 h1{
-    padding: 20px;
+    padding: 40px;
     text-align: center;
     font-weight: 700;
     color: #031A5B;
     font-size: 50px;
+    margin-top: -20px;
 }
 
 h3{
@@ -21,7 +22,13 @@ h3{
     width: 100%;
     font-weight: 700;
     text-align: center;
+    margin-top: 0px;
 }
+
+.review-heading{
+    margin-bottom: -10px;
+}
+
 
 i{
     padding-right: 10px;
@@ -30,12 +37,13 @@ i{
 .post{
     border: 2px solid  #031A5B;
     width: 100%;
-    
+    background-color: #FFFFFF;
     padding: 5px;
     margin-top: -12px;
 }
 
 .post a{
+    background-color: #FFFFFF;
     text-decoration: none;
     color:#38B6FF;
 }
@@ -47,10 +55,9 @@ i{
 .reddit{
     overflow:auto ;
     text-align: justify;
-    margin: 30px;
-    height:300px;
-    width:30%;
-    margin-left: 100px;
+    
+    height:640px;
+    width:28%;
 }
 
 .reddit a{
@@ -71,7 +78,7 @@ i{
     font-size: 28px;
     color: #FFFFFF;
     background-color: #031A5B;
-    margin-left: 130px;
+    margin-left: 100px;
     padding: 40px;
 }
 
@@ -79,9 +86,10 @@ i{
 .review-section{
     overflow:auto ;
     text-align: justify;
-    margin-top: 30px;
-    height:300px;
-    width:50%;
+    height:640px;
+    width:90%;
+    margin-right: 103px;
+    margin-top: -640px;
 }
 
 
@@ -89,9 +97,14 @@ i{
     float: left;
     width: 30%;
 }
+
 .column2 {
+    width: 30%;
+}
+
+.column3 {
     float: right;
-    width: 55%;
+    width: 28%;
 }
   
   /* Clear floats after the columns */
@@ -107,4 +120,8 @@ i{
     .col-md-8 {
         width: 100%;
     }
+}
+
+.navbar{
+    margin-bottom: 0px;
 }
