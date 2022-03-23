@@ -30,11 +30,11 @@ def home(request):
     return render(request, 'uni_fit/home.html', {'universities': universities, 'countrylist':countrylist, 'departmentlist':departmentlist} )
 
 def profile(request):
-    universities = University.objects.all().order_by('UniRank')[:5]        
+    universities = University.objects.all().order_by('UniRank')[:15]        
     if 'grade' in request.GET:
         grade = request.GET.get('grade')
         if int(grade) < 90 and int(grade) >= 80:
-            universities = University.objects.all().order_by('UniRank')[5:10]
+            universities = University.objects.all().order_by('UniRank')[5:20]
         if int(grade) < 80:
             universities = University.objects.all().order_by('UniRank')[10:]
         

@@ -5,8 +5,12 @@
 {% endblock %}
 
 {% block body_block %}
-<h3>{{user.username}}</h1>
-<div id="category-banner" class="text-center"></div>
+
+<div id="category-banner" class="text-center">
+  <div class="container-fluid">
+  
+<h3>User name : {{user.username}}</h1>
+
 <form action="{% url 'uni_fit:profile' %}" method="GET" id="form_cdd" onSubmit="loadValue(event)">
 <div class="row">
   <div class="col-12 col-xl-8">
@@ -28,8 +32,8 @@
                   </tr>
                   {% for university in universities %}
                       <tr>
-                          <td class="rank" style = "color:rgba(255,255,255,1); opacity: 1;">{{university.UniRank}}</td>
-                          <td><a href="{% url 'uni_fit:university' university.UniId %}" style = "color:rgba(255,255,255,1)">{{university.UniName }}</a></td>                          
+                          <td class="rank" style = "color:rgba(255,255,255,1); opacity: 1; text-align: center;">{{university.UniRank}}</td>
+                          <td><a href="{% url 'uni_fit:university' university.UniId %}" style = "color:rgba(255,255,255,1); text-align: center;">{{university.UniName }}</a></td>                          
                       </tr>   
                   {% endfor %}
               </table>
