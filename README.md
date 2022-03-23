@@ -40,6 +40,11 @@ To run the project
 python manage.py runserver
 ```
 
+To run the test
+```bash
+python manage.py test uni_fit
+```
+
 ## UniFit Walkthrough
 ###### Home Page 
 Navigate to ```http://127.0.0.1:8000/```
