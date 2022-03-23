@@ -5,19 +5,26 @@
 University Name
 {% endblock %}
 
+<!--<meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
 {% block body_block %}
 
 <!-- CSS -->
 <link rel="stylesheet" href="{% static 'css/university.css' %}">
 
+<div id="category-banner" class="text-center">
+    <div class="container-fluid">
+        <h1>{{ unidata.UniName }}</h1>
+    </div>
+
+
 <div style="background-image: url('/static/images/university-backgrounds/{{ unidata.UniId }}.jpg'); background-repeat: no-repeat;  background-position: center; background-size: cover; height:900px;">
-<h1>{{ unidata.UniName }}</h1>
 
-
-    <div class="uni-info column1">
+    <div class="uni-info column1" style="color: rgba(255,255,255,1); background: rgba(3,26,92,1);">
         <!-- REPLACE THIS WITH POPULATION SCRIPT 'ABOUT' INFO -->
+        <h4>About</h4>
         {{unidata.About}}
+        <img src = '/static/images/university-backgrounds/{{ unidata.UniId }}.jpg' width="600" height="337"alt="Image Load Error" style = "max-width:600; max-height:337; object-fit:contain">
     </div>
 
 
@@ -28,16 +35,15 @@ University Name
         
         {% for result in result_list %}
         <div>
-            <p class="post">
+            <ul class="post">
                 <!--<strong>SUBREDDIT: </strong> {{ result.subreddit }}-->
+                <li>
+                
                 <a href="{{ result.url }}" target=”_blank”><strong>{{ result.title }} </strong></a>
-                <!--<strong>TEXT: </strong> {{ result.selftext }}
-                <strong>UPVOTE RATIO: </strong> {{ result.upvote_ratio }}
-                <strong>UP VOTES: </strong> {{ result.ups }}
-                <strong>DOWN VOTES: </strong> {{ result.downs }}
-                <strong>SCORE:</strong> {{ result.score }}
-                <strong>URL:</strong> {{ result.url }}-->
-            </p>
+               
+                </li>
+
+            </ul>
         </div>
         {% endfor %}
         {% endif %}
@@ -69,7 +75,8 @@ University Name
     </div>
 
 </div>
-<div class="col-md-8 card mb-4  mt-3 ">
+
+<div class="col-md-8 card mb-4  mt-3" style="background: rgba(3,26,92,1);  border-radius: 20px">
     <div class="card-body">
         <h3>Leave a Review</h3>
         {% load crispy_forms_tags %}
