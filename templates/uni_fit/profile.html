@@ -6,70 +6,39 @@
 
 {% block body_block %}
 <h3>{{user.username}}</h1>
-
+<div id="category-banner" class="text-center"></div>
+<form action="{% url 'uni_fit:profile' %}" method="GET" id="form_cdd" onSubmit="loadValue(event)">
 <div class="row">
   <div class="col-12 col-xl-8">
       <div class="card card-body bg-white border-light shadow-sm mb-4">
           <h2 class="h5 mb-4">Profile information</h2>
-          <div class="row">
-              <div class="col-md-6 mb-3">
-                  <div>
-                      <label for="first_name">First Name</label>
-                      <input name="first_name" class="form-control" id="first_name" type="text"
-                             placeholder="Enter your first name" value= "{{ profile.first_name }}" readonly>
-                  </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                  <div>
-                      <label for="last_name">Last Name</label>
-                      <input name="last_name" class="form-control" id="last_name" type="text"
-                             placeholder="Also your last name" value="{{ profile.last_name }}"
-                             readonly>
-                  </div>
-              </div>
-          </div>          
-          <div class="row">
-              <div class="col-md-6 mb-3">
+          <div class="row">                            
+              <div class="col-md-6 mb-5">              
                   <div class="form-group">
-                      <label for="email">Email</label>
-                      <input name="email" class="form-control" id="email" type="email"
-                             placeholder="name@company.com" value={{ request.user.email }} readonly>
+                      <label for="grade">Grade in percentage</label>
+                      <input name="grade" class="form-control" id="grade" type="number">                  
                   </div>
               </div>
-              <div class="col-md-6 mb-3">
-                  <div class="form-group">
-                      <label for="grade">Grade</label>
-                      <input name="grade" class="form-control" id="grade" type="text"
-                             value="{{ profile.grade }}" readonly>
-                  </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <div class="form-group">
-                    <label for="country">Country</label>
-                    <select name="country" id="country">
-                      <option value="" selected="selected">Select Country</option>
-                    </select>                    
-                </div>
+            </dev>                           
+            <div class="center" style="margin: auto; background: rgba(3,26,92,0.75);  border-radius: 20px;" >
+              <table id="unitable" style = "background: transparent">
+                  <tr>
+                      <th class="rank  mb-4">University Rank</th>
+                      <th class="rank  mb-4">University</th>
+                  </tr>
+                  {% for university in universities %}
+                      <tr>
+                          <td class="rank" style = "color:rgba(255,255,255,1); opacity: 1;">{{university.UniRank}}</td>
+                          <td><a href="{% url 'uni_fit:university' university.UniId %}" style = "color:rgba(255,255,255,1)">{{university.UniName }}</a></td>                          
+                      </tr>   
+                  {% endfor %}
+              </table>
             </div>
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                  <label for="department">Department</label>
-                  <select name="department" id="department">
-                    <option value="" selected="selected">Select Department</option>
-                  </select>
-              </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <select name="subject" id="subject">
-                  <option value="" selected="selected">Select subject</option>
-                </select>
-            </div>
-        </div>
-          </div>          
-      </div>
+            
+      </div>          
+    </div>
   </div>
+
   <div class="col-12 col-xl-4">
     <div class="row">
         <div class="col-12 mb-4">
@@ -113,29 +82,7 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12 col-xl-8">
-      <div class="card card-body bg-white border-light shadow-sm mb-4">
-          <h2 class="h5 mb-4">Recommendations</h2>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <div>
-                  <label for="University name 1">University name 1</label>
-                  <input name="University name 1" class="form-control" id="University name 1" type="text"
-                         readonly>
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <div>
-                  <label for="University name 2">University name 2</label>
-                  <input name="University name 2" class="form-control" id="University name 2" type="text"                         
-                         readonly>
-              </div>
-            </div>
-          </div>
-    </div>
-  </div>           
-</div>
+
 <!--CSS & JS-->
 
 <script>
