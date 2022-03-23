@@ -21,7 +21,7 @@ h4{
     text-align: center;
     font-weight: 700;
     color:rgba(255,255,255,1);
-    font-size: 50px;
+    font-size: 20px;
     margin-top: -5px;
 }
 
@@ -31,7 +31,7 @@ h3{
     padding-top: 15px;
     color: #FFFFFF;
     width: 100%;
-    font-size: 50px;
+    font-size: 20px;
     font-weight: 700;
     text-align: center;
     margin-top: 0px;
@@ -73,7 +73,7 @@ ul.redditbull{
 .reddit{
     overflow: auto;
     text-align: justify;
-    font-size: 20px;
+    font-size: 15px;
     height:800px;
     width:auto;
     margin-top: 0%;
@@ -103,7 +103,7 @@ ul.redditbull{
 }
 
 .uni-info{
-    font-size: 24px;
+    font-size: 15px;
     color: rgba(255,255,255,1);
     background-color: rgba(3, 26, 91, 1);
     margin-left: 100px; 
@@ -124,7 +124,7 @@ ul.redditbull{
     position: relative;
     overflow:auto;
     float: right;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 20px;
     text-align: justify;
     height:800px;
