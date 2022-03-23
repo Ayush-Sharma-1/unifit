@@ -6,59 +6,86 @@
 }
 
 h1{
-    padding: 40px;
+    padding: 10px;
     text-align: center;
     font-weight: 700;
-    color: #031A5B;
+    color:rgba(3, 26, 91, 1);
     font-size: 50px;
-    margin-top: -20px;
+    margin-top: -5px;
+}
+
+h4{
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+    color:rgba(255,255,255,1);
+    font-size: 50px;
+    margin-top: -5px;
 }
 
 h3{
-    background-color: #031A5B;
+    background-color: rgba(3, 26, 91, 1);
     padding-bottom: 15px;
     padding-top: 15px;
     color: #FFFFFF;
     width: 100%;
+    font-size: 50px;
     font-weight: 700;
     text-align: center;
     margin-top: 0px;
 }
 
 .review-heading{
+    background-color: rgba(3, 26, 91, 1);
     margin-bottom: -10px;
 }
 
 
 i{
     padding-right: 10px;
+    
+}
+
+ul.redditbull{
+    list-style-image: url('/static/images/reddit.jpg'); 
 }
 
 .post{
-    border: 2px solid  #031A5B;
+    border: 2px;
     width: 100%;
-    background-color: #FFFFFF;
     padding: 5px;
     margin-top: -12px;
 }
 
 .post a{
-    background-color: #FFFFFF;
     text-decoration: none;
-    color:#38B6FF;
+    color:rgba(255,255,255,1);
+    
+    
 }
 
 .post a:hover{
-    color:#031A5B;
+    color: #031A5B;
 }
 
 .reddit{
-    overflow:auto ;
+    overflow: auto;
     text-align: justify;
-    
-    height:640px;
-    width:28%;
+    font-size: 18px;
+    height:700px;
+    width:34%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    position: relative;
+    background-color:rgba(252,68,4,0.90);
+    border-radius: 20px;
+    bottom: 10; 
 }
+
+.reddit::-webkit-scrollbar {
+    display: none; 
+}
+
 
 .reddit a{
     text-decoration: none;
@@ -66,8 +93,7 @@ i{
 
 .uni-image{
     width: 100%;
-    margin-left: 100px;
-    
+    margin-left: 100px;   
 }
 
 .section1 div{
@@ -75,46 +101,62 @@ i{
 }
 
 .uni-info{
-    font-size: 28px;
-    color: #FFFFFF;
-    background-color: #031A5B;
-    margin-left: 100px;
-    padding: 40px;
+    font-size: 24px;
+    color: rgba(255,255,255,1);
+    background-color: rgba(3, 26, 91, 1);
+    margin-left: 100px; 
+    border-radius: 20px;
+    position: relative;
+    bottom: 10px; 
+    right: 10px;
+    padding: 45px;
+    overflow: auto;
 }
 
+.uni-info::-webkit-scrollbar {
+    display: none; 
+}
 
 .review-section{
+    position: relative;
     overflow:auto ;
+    float: right;
     text-align: justify;
     height:640px;
-    width:90%;
-    margin-right: 103px;
-    margin-top: -640px;
+    width:50%;
+
 }
 
+.review-section::-webkit-scrollbar {
+    display: none; 
+}
 
 .column1 {
     float: left;
     width: 30%;
+    margin: 2% 2% 2% 2%;
 }
 
 .column2 {
-    width: 30%;
+    width: auto;
+    margin: 2% 2% 2% 2%; 
 }
 
 .column3 {
     float: right;
-    width: 28%;
+    width: 30%;
+    margin: 2% 2% 2% 2%; 
 }
+
+
   
   /* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
+
 }
-
-
 
 @media (min-width: 992px){
     .col-md-8 {
