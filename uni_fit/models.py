@@ -39,7 +39,7 @@ class University(models.Model):
     UniRank = models.IntegerField(default=0)
     About = models.CharField(max_length=500)
     Link = models.CharField(max_length=30)
-    FavouriteUnversity = models.ManyToManyField(Users,related_name='favourite',default=None, blank=True)
+    FavouriteUnversity = models.ManyToManyField(User,related_name='favourite',default=None, blank=True)
 
     class Meta:
         verbose_name_plural = "Universities"

@@ -17,7 +17,7 @@
             <p>{{university.About}}</p>
         </div>
         <div>
-            <a href="{% url 'uni_fit:favourite_add' user.id %}" class="btn btn-outline-primary">Remove</a>
+            <a href="{% url 'uni_fit:favourite_add' university.UniId %}" class="btn btn-outline-primary">Remove</a>
         </div>
     </div>
     {% endfor %}

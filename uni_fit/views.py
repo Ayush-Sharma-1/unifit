@@ -34,8 +34,8 @@ def profile(request):
 
 @login_required
 def favourite_add(request, id):
-    university = get_object_or_404(University, FavouriteUnversity = id)
-    if (university.FavouriteUnversity.filter(FavouriteUnversity=request.user.id).exists()):
+    university = get_object_or_404(University, UniId=id)
+    if (university.FavouriteUnversity.filter(id=request.user.id).exists()):
         university.FavouriteUnversity.remove(request.user)
     else:
         university.FavouriteUnversity.add(request.user)
