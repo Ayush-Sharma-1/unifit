@@ -46,27 +46,7 @@ Register
                 {{ form.password2 }}
                 <label>PASSWORD CONFIRMATION</label>
             </div>
-         
-            <label id="pref">SET YOUR PREFERENCES</label>
 
-            <div class="preferences">
-                <select name="country" id="country">
-                    <option value="" selected="selected">Select Country</option>
-                </select>
-                <select name="department" id="department">
-                    <option value="" selected="selected">Select Department</option>
-                </select>
-            </div>
-
-            <label >SOME MORE ABOUT YOU</label>
-
-            <div class="about-you">
-                <select name="subject" id="subject">
-                    <option value="" selected="selected">Select Subject</option>
-                </select>
-                <label for="grade">GRADE (%)</label>
-                <input type="integer" id="grade" name="grade">
-            </div>
             <br/>
             {{ form.errors }}
             <button type="submit" id="submit">Sign Up</button>
