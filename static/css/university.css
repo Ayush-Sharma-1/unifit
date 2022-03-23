@@ -12,6 +12,8 @@ h1{
     color:rgba(3, 26, 91, 1);
     font-size: 50px;
     margin-top: -5px;
+    background-color: rgba(248,249,250,255);
+    border:rgba(248,249,250,255);
 }
 
 h4{
