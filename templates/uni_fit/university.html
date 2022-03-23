@@ -5,18 +5,17 @@
 University Name
 {% endblock %}
 
-<!--<meta name="viewport" content="width=device-width, initial-scale=1"> -->
-
+<meta name="viewport" content="width=device-width, initial-scale=auto;"
 {% block body_block %}
 
 <!-- CSS -->
 
-
+<link rel="stylesheet" href="{% static 'css/university.css' %}">
 <div id="category-banner" class="text-center" style = "background-color: rgba(248,249,250,255);">
     <div class="container-fluid">
         <h1>{{ unidata.UniName }}</h1>
    
-        <link rel="stylesheet" href="{% static 'css/university.css' %}">
+       
 
 <div style="background-image: url('/static/images/university-backgrounds/{{ unidata.UniId }}.jpg'); background-repeat: no-repeat;  background-position: center; background-size: cover; height:900px;">
 
