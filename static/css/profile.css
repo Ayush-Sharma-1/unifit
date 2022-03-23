@@ -26,7 +26,7 @@
 
     .col-md-6 {
         flex: 0 0 auto;
-        width: 50%;
+        width: 30%;
     }
 }
 
@@ -147,6 +147,19 @@ file-field input[type="file"] {
     border-radius: 50% !important;
 }
 
+#category-banner{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000000;
+    background:linear-gradient( rgba(211, 229, 239, 0.1) 100%, rgba(211, 229, 239, 0.1)100%),url('/static/images/profile-cover.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #ffffff;  
+  
+  }
+
 .form-control {
     display: block;
     width: 100%;
@@ -206,6 +219,15 @@ file-field input[type="file"] {
 .text-dark {
     color: #262B40 !important;
 }
+
+.rank{
+    justify-content: center;
+    text-align: left;
+    font-size: 17px;
+    padding: 0.25%;
+    color: #FFFFFF;
+    opacity: 1;
+  }
 
 
 
