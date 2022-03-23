@@ -6,14 +6,20 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'unifit.settings')
 import django
 django.setup()
 
-from uni_fit.models import University, University_Department, Reddit
+from uni_fit.models import University, University_Department, Reddit, Post
 from uni_fit.models import Users
 
 def populate():
     pop_University()
     pop_University_Department()
-    #pop_Reddit()
+    pop_Reddit()
+    pop_Post()
 
+def pop_Post():
+    post = [{'title': 'MIT'}]
+
+    for u in post:
+        Post.objects.get_or_create(title=u['title'])
 
 def pop_University():
     university = [
@@ -23,7 +29,7 @@ def pop_University():
 
     {'UniName':'Standford University', 'Country':'US', 'UniRank':'3', 'About':'Stanford University, officially Leland Stanford Junior University, is a private research university in Stanford, California. The campus occupies 8,180 acres, among the largest in the United States, and enrolls over 17,000 students. Stanford is ranked among the best universities in the world.', 'Link':'https://www.stanford.edu/'},
 
-    {'UniName':'University of Cambridge', 'Country':'UK', 'UniRank':'4', 'About':'The University of Oxford is a collegiate research university in Oxford, England. There is evidence of teaching as early as 1096, making it the oldest university in the English-speaking world and the world\'\s second-oldest university in continuous operation. ', 'Link':'https://www.ox.ac.uk/'},
+    {'UniName':'University of Cambridge', 'Country':'UK', 'UniRank':'4', 'About':'The University of Cambridge is a collegiate research university in Cambridge, United Kingdom. Founded in 1209 and granted a royal charter by Henry III in 1231, Cambridge is the second-oldest university in the English-speaking world and the worlds fourth-oldest surviving university. The university grew out of an association of scholars who left the University of Oxford after a dispute with the townspeople. The two English ancient universities share many common features and are often jointly referred to as Oxbridge. Cambridge is ranked among the most prestigious universities in the world. ', 'Link':'https://www.cam.ac.uk/'},
 
     {'UniName':'Harvard University', 'Country':'US', 'UniRank':'5', 'About':'Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Founded in 1636 as Harvard College and named for its first benefactor, the Puritan clergyman John Harvard, it is the oldest institution of higher learning in the United States and among the most prestigious in the world.', 'Link':'https://www.harvard.edu/'},
 
@@ -89,17 +95,17 @@ def pop_University_Department():
                     {'UniName':University.objects.filter(pk=12).first(),'DeptName':'Engineering', 'DeptRank':'37','Link':'https://study.unimelb.edu.au/find/'},
                     {'UniName':University.objects.filter(pk=13).first(),'DeptName':'Engineering', 'DeptRank':'38','Link':'https://www.sydney.edu.au/courses/search.html?keywords=engineering&search-type=course&course-level=uc&page=1'},
                     {'UniName':University.objects.filter(pk=14).first(),'DeptName':'Engineering', 'DeptRank':'43','Link':'https://www.unsw.edu.au/study/find-a-degree-or-course/degree-search- results#search=Engineering&sort=relevance&startRank=1&numRanks=12'},
-                    {'UniName':University.objects.filter(pk=15).first(),'DeptName':'Engineering', 'DeptRank':'46','Link':'https://you.ubc.ca/programs/#mode=by-topic&viewMode=list&filters[search]=Engineering'},
-                    {'UniName':University.objects.filter(pk=16).first(),'DeptName':'Engineering', 'DeptRank':'47','Link':'https://future-students.uq.edu.au/study/programs?search=engineering&year=2022'},
-                    {'UniName':University.objects.filter(pk=17).first(),'DeptName':'Engineering', 'DeptRank':'49','Link':'https://www.ip-paris.fr/en/topics/engineer-programs'},
-                    {'UniName':University.objects.filter(pk=18).first(),'DeptName':'Engineering', 'DeptRank':'52','Link':'https://psl.eu/formations?field_discipline=Engineering%20Science%20(225)'},
+                    {'UniName':University.objects.filter(pk=15).first(),'DeptName':'Arts', 'DeptRank':'46','Link':'https://you.ubc.ca/programs/#mode=by-topic&viewMode=list&filters[search]=Engineering'},
+                    {'UniName':University.objects.filter(pk=16).first(),'DeptName':'Arts', 'DeptRank':'47','Link':'https://future-students.uq.edu.au/study/programs?search=engineering&year=2022'},
+                    {'UniName':University.objects.filter(pk=17).first(),'DeptName':'Arts', 'DeptRank':'49','Link':'https://www.ip-paris.fr/en/topics/engineer-programs'},
+                    {'UniName':University.objects.filter(pk=18).first(),'DeptName':'Arts', 'DeptRank':'52','Link':'https://psl.eu/formations?field_discipline=Engineering%20Science%20(225)'},
                     {'UniName':University.objects.filter(pk=19).first(),'DeptName':'Engineering', 'DeptRank':'68','Link':'https://programmes.polytechnique.edu/en/bachelor/bachelor-of-science'},
-                    {'UniName':University.objects.filter(pk=20).first(),'DeptName':'Engineering', 'DeptRank':'73','Link':'https://www.gla.ac.uk/schools/engineering/'},
+                    {'UniName':University.objects.filter(pk=20).first(),'DeptName':'Arts', 'DeptRank':'73','Link':'https://www.gla.ac.uk/schools/engineering/'},
                     {'UniName':University.objects.filter(pk=21).first(),'DeptName':'Engineering', 'DeptRank':'83','Link':'https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation-par-discipline'},
-                    {'UniName':University.objects.filter(pk=22).first(),'DeptName':'Engineering', 'DeptRank':'138','Link':'https://www.centralesupelec.fr/en/engineering-curriculum'},
-                    {'UniName':University.objects.filter(pk=23).first(),'DeptName':'Engineering', 'DeptRank':'149','Link':'https://www.exeter.ac.uk/undergraduate/courses/engineering/'},
+                    {'UniName':University.objects.filter(pk=22).first(),'DeptName':'Arts', 'DeptRank':'138','Link':'https://www.centralesupelec.fr/en/engineering-curriculum'},
+                    {'UniName':University.objects.filter(pk=23).first(),'DeptName':'Arts', 'DeptRank':'149','Link':'https://www.exeter.ac.uk/undergraduate/courses/engineering/'},
                     {'UniName':University.objects.filter(pk=24).first(),'DeptName':'Engineering', 'DeptRank':'149','Link':'https://uwaterloo.ca/future-students/missing-manual/applying/how-choose-program-faculty-engineering'},
-                    {'UniName':University.objects.filter(pk=25).first(),'DeptName':'Engineering', 'DeptRank':'298','Link':'https://www.sfu.ca/students/admission/programs/a-z/e/engineering-science/overview.html'}
+                    {'UniName':University.objects.filter(pk=25).first(),'DeptName':'Arts', 'DeptRank':'298','Link':'https://www.sfu.ca/students/admission/programs/a-z/e/engineering-science/overview.html'}
                    ]
 
 
@@ -109,34 +115,29 @@ def pop_University_Department():
 
 def pop_Reddit():
         reddit = [
-            {'UniName':'University of Oxford', 'SubReddit':'r/oxforduni','Link':'https://www.reddit.com/r/oxforduni/'},
-            {'UniName':'Stanford University', 'SubReddit':'r/stanford','Link':'https://www.reddit.com/r/stanford/'},
-            {'UniName':'Harvard University', 'SubReddit':'r/Harvard','Link':'https://www.reddit.com/r/Harvard/'},
-            {'UniName':'California Institute of Technology','SubReddit':'r/Caltech','Link':'https://www.reddit.com/r/Caltech/'},
-            {'UniName':'University College London', 'SubReddit':'r/UCL','Link':'https://www.reddit.com/r/UCL/'},
-            {'UniName':'Princeton University', 'SubReddit':'r/princeton','Link':'https://www.reddit.com/r/princeton/'},
-            {'UniName':'University of Toronto', 'SubReddit':'r/UofT','Link':'https://www.reddit.com/r/UofT/'},
-            {'UniName':'McGill University ', 'SubReddit':'r/mcgill','Link':'https://www.reddit.com/r/mcgill/'},
-            {'UniName':'Australian National University','SubReddit':'r/Anu','Link':'https://www.reddit.com/r/Anu/'},
-            {'UniName':'University of Melbourne', 'SubReddit':'r/unimelb','Link':'https://www.reddit.com/r/unimelb/'},
-            {'UniName':'University of Sydney', 'SubReddit':'r/usyd','Link':'https://www.reddit.com/r/usyd/'},
-            {'UniName':'University of New South Wales','SubReddit':'r/unsw','Link':'https://www.reddit.com/r/unsw/'},
-            {'UniName':'The University of British Columbia','SubReddit':'r/UBC','Link':'https://www.reddit.com/r/UBC/'},
-            {'UniName':'The University of Queensland','SubReddit':'r/Uqreddit','Link':'https://www.reddit.com/r/UQreddit/'},
-            {'UniName':'Polytechnic Institute of Paris','SubReddit':'r/france','Link':'https://www.reddit.com/r/france/'},
-            {'UniName':'Paris Sciences et Lettres University','SubReddit':'r/PSLUniversity','Link':'https://www.reddit.com/r/PSLUniversity/'},
-            {'UniName':'The École polytechnic', 'SubReddit':'r/france','Link':'https://www.reddit.com/r/france/'},
-            {'UniName':'University of Glasgow', 'SubReddit':'r/GlasgowUni','Link':'https://www.reddit.com/r/GlasgowUni/'},
-            {'UniName':'University of Paris', 'SubReddit':'r/france','Link':'https://www.reddit.com/r/france/'},
-            {'UniName':'Centrale Supélec', 'SubReddit':'r/france','Link':'https://www.reddit.com/r/france/'},
-            {'UniName':'University of Exeter', 'SubReddit':'r/exeter','Link':'https://www.reddit.com/r/exeter/'},
-            {'UniName':'University of Waterloo', 'SubReddit':'r/uwaterloo','Link':'https://www.reddit.com/r/uwaterloo/'},
-            {'UniName':'Simon Fraser University ', 'SubReddit':'r/simonfraser','Link':'https://www.reddit.com/r/simonfraser/'}]
+            {'UniName':University.objects.filter(pk=2).first(), 'SubReddit':'r/oxforduni','Link':'https://www.reddit.com/r/oxforduni/'},
+            {'UniName':University.objects.filter(pk=3).first(), 'SubReddit':'r/stanford','Link':'https://www.reddit.com/r/stanford/'},
+            {'UniName':University.objects.filter(pk=5).first(), 'SubReddit':'r/Harvard','Link':'https://www.reddit.com/r/Harvard/'},
+            {'UniName':University.objects.filter(pk=6).first(),'SubReddit':'r/Caltech','Link':'https://www.reddit.com/r/Caltech/'},
+            {'UniName':University.objects.filter(pk=7).first(), 'SubReddit':'r/UCL','Link':'https://www.reddit.com/r/UCL/'},
+            {'UniName':University.objects.filter(pk=8).first(), 'SubReddit':'r/princeton','Link':'https://www.reddit.com/r/princeton/'},
+            {'UniName':University.objects.filter(pk=9).first(), 'SubReddit':'r/UofT','Link':'https://www.reddit.com/r/UofT/'},
+            {'UniName':University.objects.filter(pk=10).first(), 'SubReddit':'r/mcgill','Link':'https://www.reddit.com/r/mcgill/'},
+            {'UniName':University.objects.filter(pk=11).first(),'SubReddit':'r/Anu','Link':'https://www.reddit.com/r/Anu/'},
+            {'UniName':University.objects.filter(pk=12).first(), 'SubReddit':'r/unimelb','Link':'https://www.reddit.com/r/unimelb/'},
+            {'UniName':University.objects.filter(pk=13).first(), 'SubReddit':'r/usyd','Link':'https://www.reddit.com/r/usyd/'},
+            {'UniName':University.objects.filter(pk=14).first(),'SubReddit':'r/unsw','Link':'https://www.reddit.com/r/unsw/'},
+            {'UniName':University.objects.filter(pk=15).first(),'SubReddit':'r/UBC','Link':'https://www.reddit.com/r/UBC/'},
+            {'UniName':University.objects.filter(pk=16).first(),'SubReddit':'r/Uqreddit','Link':'https://www.reddit.com/r/UQreddit/'},
+            {'UniName':University.objects.filter(pk=20).first(), 'SubReddit':'r/GlasgowUni','Link':'https://www.reddit.com/r/GlasgowUni/'},
+            {'UniName':University.objects.filter(pk=23).first(), 'SubReddit':'r/exeter','Link':'https://www.reddit.com/r/exeter/'},
+            {'UniName':University.objects.filter(pk=24).first(), 'SubReddit':'r/uwaterloo','Link':'https://www.reddit.com/r/uwaterloo/'},
+            {'UniName':University.objects.filter(pk=25).first(), 'SubReddit':'r/simonfraser','Link':'https://www.reddit.com/r/simonfraser/'}]
 
         for u in reddit:
             Reddit.objects.get_or_create(UniName=u['UniName'], SubReddit=u['SubReddit'],Link=u['Link'])
 
 
 if __name__ == '__main__' :
-   print("Starting unifit Rango Population script...")
+   print("Starting unifit Population script...")
    populate()

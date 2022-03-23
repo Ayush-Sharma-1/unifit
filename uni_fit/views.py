@@ -30,12 +30,20 @@ def home(request):
     return render(request, 'uni_fit/home.html', {'universities': universities, 'countrylist':countrylist, 'departmentlist':departmentlist} )
 
 def profile(request):
-    return render(request, 'uni_fit/profile.html',)
+    universities = University.objects.all().order_by('UniRank')[:15]        
+    if 'grade' in request.GET:
+        grade = request.GET.get('grade')
+        if int(grade) < 90 and int(grade) >= 80:
+            universities = University.objects.all().order_by('UniRank')[5:20]
+        if int(grade) < 80:
+            universities = University.objects.all().order_by('UniRank')[10:]
+        
+    return render(request, 'uni_fit/profile.html', {'universities': universities})
 
 @login_required
 def favourite_add(request, id):
-    university = get_object_or_404(University, FavouriteUnversity = id)
-    if (university.FavouriteUnversity.filter(FavouriteUnversity=request.user.id).exists()):
+    university = get_object_or_404(University, UniId=id)
+    if (university.FavouriteUnversity.filter(id=request.user.id).exists()):
         university.FavouriteUnversity.remove(request.user)
     else:
         university.FavouriteUnversity.add(request.user)
