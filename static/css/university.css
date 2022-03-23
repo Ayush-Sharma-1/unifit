@@ -71,15 +71,15 @@ ul.redditbull{
 .reddit{
     overflow: auto;
     text-align: justify;
-    font-size: 18px;
-    height:700px;
-    width:34%;
+    font-size: 20px;
+    height:800px;
+    width:auto;
     margin-top: 0%;
     margin-bottom: 0%;
     position: relative;
     background-color:rgba(252,68,4,0.90);
-    border-radius: 20px;
-    bottom: 10; 
+    border-radius: 20px; 
+    top: 50px
 }
 
 .reddit::-webkit-scrollbar {
@@ -107,9 +107,10 @@ ul.redditbull{
     margin-left: 100px; 
     border-radius: 20px;
     position: relative;
-    bottom: 10px; 
+    bottom: auto; 
     right: 10px;
     padding: 45px;
+    height:800px;
     overflow: auto;
 }
 
@@ -119,11 +120,13 @@ ul.redditbull{
 
 .review-section{
     position: relative;
-    overflow:auto ;
+    overflow:auto;
     float: right;
+    font-size: 20px;
+    border-radius: 20px;
     text-align: justify;
-    height:640px;
-    width:50%;
+    height:800px;
+    width:auto;
 
 }
 
