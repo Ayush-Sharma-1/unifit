@@ -1,31 +1,34 @@
 {% extends 'uni_fit/base.html' %}
-
+{% load staticfiles %}
 {% block title_block %}
     Favourites
 {% endblock %}
 
 {% block body_block %}
-<h1>{{user.username}} your favourites are: </h1>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <div>
     {% if fav_list %}
+    <h1 style="width:800px; margin:0 auto; text-align: center;">{{user.username}} your favourites are: </h1>
     <div>
-        {% for university in fav_list %}
-        <p>
-           <strong>{{university.UniName}}</strong>
-        </p>
-        <div>
-            <p>{{university.About}}</p>
-        </div>
-        <div>
-            <a href="{% url 'uni_fit:favourite_add' university.UniId %}" class="btn btn-outline-primary">Remove</a>
-        </div>
+        {% for university in fav_list %}  
+            <div class="card">
+                <p>
+                    <p><strong>{{university.UniName}}</strong></p>
+                    <br>{{university.About}}
+                    <br><a href={{university.Link}}>Link to University</a>
+                    <br><a href="{% url 'uni_fit:favourite_add' university.UniId %}" class="btn btn-outline-primary">Remove</a>
+                </p>
+            </div>
     </div>
     {% endfor %}
+    {% else %}
+        <h1 style="width:800px; margin:0 auto; text-align: center;">Please add your favourite universities</h1>
     {% endif %}
 </div>
 
-
-
+<!-- CSS-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/favourites.css' %} " style = "color: rgba(255,255,255,255); opacity: 1;"/>
 
 
 {% endblock %}
