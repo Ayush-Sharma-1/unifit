@@ -32,7 +32,7 @@ python manage.py migrate
 
 Add UniFit Data 
 ```bash
-python populate_uni_fit.py
+python population_script.py
 ```
 
 To run the project
